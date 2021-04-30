@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+name = "custom"
+
+[packages]
+flask = "*"
+simplejson = "*"
+python-dotenv = "*"
+flask-sqlalchemy = "*"
+pymysql = "*"
+
+[dev-packages]
+mypy = "*"
+autopep8 = "*"
+
+[requires]
+python_version = "3.8"
