@@ -20,9 +20,10 @@
   <el-upload
     class="upload-demo"
     ref="upload"
-    action="http://goat.oct-month.top/api/upload"
+    action="http://goat.oct-month.top/upload"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
+    :on-success="handleSuccess"
     :file-list="fileList"
     :auto-upload="false">
     <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
@@ -33,6 +34,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
   export default {
     data() {
       return {
@@ -75,6 +78,28 @@
       submitUpload() {
         this.$refs.upload.submit();
       },
+      handleSuccess(response, file) {
+        if (response.status == "success")
+        {
+          var url = response.data;
+          axios.post('http://goat.oct-month.top/api/imgs/', {
+            url: url,
+          })
+          .then(res => {
+            if (res.data.status == 'success')
+            {
+              console.log('上传成功');
+            }
+            else
+            {
+              console.log('上传失败');
+            }
+          })
+          .catch(error => {
+            console.log('上传失败');
+          })
+        }
+      },
       handleRemove(file, fileList) {
         console.log(file, fileList);
       },
@@ -84,11 +109,14 @@
     },
     mounted() {
       const that = this
-      axios.get('http://goat.oct-month.top/api/imgs')
+      axios.get('http://goat.oct-month.top/api/imgs/')
         .then(res => {
           if (res.data.status === "success")
           {
-            that.urls = res.data.data_list
+            that.urls = []
+            res.data.data_list.forEach(e => {
+              that.urls.push(e['url'])
+            });
             // console.log(that.tableData);
           }
         })
