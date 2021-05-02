@@ -355,6 +355,8 @@
         </template>
       </el-table-column>
     </el-table>
+    
+<el-button  style="float:right;" @click="exportData">导出</el-button>
 
     <el-pagination
       background
@@ -407,6 +409,9 @@ export default {
       var start = this.page_size * (currentPage - 1)
       var end = start + this.page_size
       this.currentTabelData = this.tableData.slice(start, end)
+    },
+    exportData(){
+
     }
   },
   //用于获取后台返回的数据
@@ -423,8 +428,9 @@ export default {
       .then(res => {
         if (res.data.status === "success")
         {
+          
           that.tableData = res.data.data_list
-          // console.log(that.tableData);
+          //console.log(that.tableData.value["组氨酸"]);
           that.changePage(1)
         }
       })

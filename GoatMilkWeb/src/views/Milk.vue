@@ -86,6 +86,7 @@
         </template>
       </el-table-column>
     </el-table>
+    <el-button  style="float:right;" @click="exportData">导出</el-button>
 
     <el-pagination
     background
@@ -139,7 +140,10 @@ axios.defaults.withCredentials = true
         var start = this.page_size * (currentPage - 1)
         var end = start + this.page_size
         this.currentTabelData = this.tableData.slice(start, end)
-      }
+      },
+      exportData(){
+
+    }
     },
 
     //用于获取后台返回的数据
