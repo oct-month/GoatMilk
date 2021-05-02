@@ -1,9 +1,8 @@
 docker run \
     --name mysql \
     --network goat-milk \
-    --rm \
     -p 3306:3306 \
-    -v /home/sun/service/mysql/data:/var/lib/mysql \
+    -v /root/GoatMilk/mysql/data:/var/lib/mysql \
     -e MYSQL_ROOT_PASSWORD=10101010 \
     -d \
     mysql \
