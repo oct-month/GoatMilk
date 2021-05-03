@@ -137,7 +137,7 @@ export default {
         {
           var j=0
           for(var i=0;i<res.data.data_list.length;i++){
-            if(res.data.data_list[i]["区域"]=="陕西省"){
+            if(res.data.data_list[i]["区域"]!="陕西省"){
                  that.tableData[j] = res.data.data_list[i]
                  j=j+1
             }}

@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Brand from '../views/Brand'
+import BrandF from '../views/BrandF'
 import Info from '../views/Info'
+import InfoF from '../views/InfoF'
 import AddInfo from '../views/AddInfo'
 import Milk from '../views/Milk'
 import AddMilk from '../views/AddMilk'
@@ -34,8 +36,13 @@ const routes = [
     children:[
       {
         path: '/Brand',
-        name: '产品信息',
+        name: '陕西省内',
         component: Brand
+      },
+      {
+        path: '/BrandF',
+        name: '陕西省外',
+        component: BrandF
       },
       {
         path: '/AddBrand',
@@ -63,8 +70,13 @@ const routes = [
     children:[
       {
         path: '/Info',
-        name: '检测信息',
+        name: '陕西省内',
         component: Info
+      },
+      {
+        path: '/InfoF',
+        name: '陕西省外',
+        component: InfoF
       },
       {
         path: '/AddInfo',

@@ -62,7 +62,7 @@ axios.defaults.withCredentials = true
         },
         rules: {
           state: [
-            { required: true, message: '请输入组织状态', trigger: 'blur' },
+            // { required: true, message: '请输入组织状态', trigger: 'blur' },
           ],
         }
       };

@@ -429,9 +429,9 @@ export default {
       .then(res => {
         if (res.data.status === "success")
         {
-          var j = 0
+          var j=0
           for(var i=0;i<res.data.data_list.length;i++){
-            if(res.data.data_list[i]["info"]=="陕西"){
+            if(res.data.data_list[i]["info"]!="陕西"){
                  that.tableData[j] = res.data.data_list[i]
                  j=j+1
             }}

@@ -9,11 +9,11 @@
   <el-form-item label="Abs280" prop="Abs280">
     <el-input v-model="ruleForm['Abs280']" style="width:300px"></el-input>
   </el-form-item>
-  <el-form-item label="Abs260/280" prop="Abs260_280">
+  <el-form-item label="Abs260_280" prop="Abs260_280">
     <el-input v-model="ruleForm['Abs260_280']" style="width:300px"></el-input>
   </el-form-item>
-  <el-form-item label="DNA浓度(ng/ul)" prop="DNA_content">
-    <el-input v-model="ruleForm['DNA_content']" style="width:300px"></el-input>
+  <el-form-item label="DNA浓度(ng/ul)" prop="DNA浓度">
+    <el-input v-model="ruleForm['DNA浓度']" style="width:300px"></el-input>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
@@ -33,7 +33,7 @@ axios.defaults.withCredentials = true
           Abs260: '',
           Abs280: '',
           Abs260_280: '',
-          DNA_content: '',
+          DNA浓度: ''
         },
         rules: {
           state: [

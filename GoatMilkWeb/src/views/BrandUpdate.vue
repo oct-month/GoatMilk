@@ -292,14 +292,14 @@ axios.defaults.withCredentials = true
         },
         rules: {
           组织状态: [
-            { required: true, message: '请输入组织状态', trigger: 'blur' },
+            // { required: true, message: '请输入组织状态', trigger: 'blur' },
           ],
         }
       };
     },
     methods: {
       submitForm(formName) {
-        if(this.$store.state.user_role !== 'admin'){
+        if(this.$store.state.user_role != 'admin'){
           alert("无更改权限，仅管理员可操作");
         }
         const _this = this
