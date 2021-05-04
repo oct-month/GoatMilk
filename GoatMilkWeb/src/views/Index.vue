@@ -1,13 +1,13 @@
 <template>
-<h1> 
+<h1>
   <el-header>
   <center>羊奶粉信息数据库</center>
   </el-header>
-  <el-container id="container">
+  <el-container id="contain">
   <el-aside width="200px" style="background-color: rgb(138, 141, 246)">
     <el-menu :default-openeds="['1']" :default-active="'1-1'">
 
-      <el-menu router style="background-color: rgb(138, 141, 246)" >
+      <el-menu router style="background-color: rgb(50, 101, 246)" >
           <el-submenu v-for="(item,index) in $router.options.routes" :key="index" :index="index+''" v-if="item.show">
             <template slot="title"><i class="el-icon-message"></i>{{item.name}}</template>
             <el-menu-item v-for="(item2,index2) in item.children" :key="index2" :index="item2.path" 
@@ -31,9 +31,10 @@
       </el-dropdown>
       <span>王小虎</span>
     </el-header>
-  </el-container> -->  
+  </el-container> --> 
+   <!--"style="background-color: rgb(228, 101, 146)  -->
 
-  <el-main style="background-color: rgb(228, 101, 146)">
+  <el-main style="background-color: rgb(58, 101, 146)">
     <router-view></router-view>
   </el-main>
   </el-container>
@@ -41,9 +42,19 @@
 </template>
 
 <style scoped>
+#background{
+  width: 100%;
+    height: 100%;
+    background: url("../assets/be.jpg");
+    background-size:100% 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 #container {
   height: 100%;
-  border: 1px solid #eee;
+  border: 1px solid rgb(238, 238, 238);
 }
 </style>
 

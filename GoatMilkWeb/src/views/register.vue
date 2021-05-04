@@ -80,15 +80,15 @@ export default {
 #background{
   width: 100%;
     height: 100%;
-    /* background: url("../assets/bg2.jpg"); */
+    background: url("../assets/be.jpg");
     background-size:100% 100%;
     position: fixed;
     top: 0;
     left: 0;
 }
 #contain{
-  width: 580px;
-  height: 560px;
+  width: 500px;
+  height: 410px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -103,7 +103,7 @@ export default {
 .form{
   color: white;
   margin-left: 20%;
-  margin-top: 60px;
+  margin-top: 50px;
   font-size: 20px;
   text-align: left;
 }
@@ -115,7 +115,7 @@ label{
 }
 input,textarea{
   margin-left: 10px;
-  padding: 4px;
+  padding: 5px;
   border: solid 1px #4e5ef3;
   outline: 0;
   font: normal 13px/100% Verdana,Tahoma,sans-serif;

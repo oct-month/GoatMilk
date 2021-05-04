@@ -102,7 +102,7 @@ export default {
 #background{
   width: 100%;
     height: 100%;
-    /* background: url("../assets/bg2.jpg"); */
+    background: url("../assets/be.jpg");
     background-size:100% 100%;
     position: fixed;
     top: 0;
@@ -110,7 +110,7 @@ export default {
 }
 #contain{
   width: 580px;
-  height: 560px;
+  height: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -125,7 +125,7 @@ export default {
 .form{
   color: white;
   margin-left: 20%;
-  margin-top: 60px;
+  margin-top: 50px;
   font-size: 20px;
   text-align: left;
 }

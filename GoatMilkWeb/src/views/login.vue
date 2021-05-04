@@ -1,8 +1,12 @@
 <template>
 <div id="background">
+  <!-- <div class="background">
+    <img :src="assets/bc.jpg" width="100%" height="100%" alt="" />
+  </div> -->
     <div class="container">
         <form action="">
-          <h1>Login</h1>
+          <h1>羊奶粉信息管理系统</h1>
+          <h2>Login</h2>
           <div class="form">
               <div class="item">
                 <label>用户名：</label><input type="text" name="username" v-model.trim="name" placeholder="请输入用户名">
@@ -102,7 +106,7 @@ export default {
 #background{
     width: 100%;
     height: 100%;
-    /* background: url("../assets/bg2.jpg"); */
+    background: url("../assets/be.jpg");
     background-size:100% 100%;
     position: fixed;
     top: 0;
@@ -113,7 +117,7 @@ export default {
   width: 480px;
   height: 300px;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%,-50%);
   background:#00000090;
@@ -155,11 +159,11 @@ button{
   width: 100px;
   background: rgba(35, 19, 252, 0.425);
   border-radius: 10px;
-  margin-top: 18px;
+  margin-top: 48px;
   box-shadow: none;
   color: white;
-  margin-left: 40px;
-  margin-right: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
 
 }
 .keep{
