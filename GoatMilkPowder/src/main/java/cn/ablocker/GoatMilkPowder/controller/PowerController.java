@@ -30,6 +30,7 @@ public class PowerController extends BaseController
 			return new UserResponse(SUCCESS_STATUS, data_list);
 		}
 		catch (Exception e) {
+			System.out.println(e);
 			return new UserResponse(FAIL_STATUS);
 		}
 	}
@@ -46,6 +47,7 @@ public class PowerController extends BaseController
 			return new UserResponse(SUCCESS_STATUS, user);
 		}
 		catch (Exception e) {
+			System.out.println(e);
 			return new UserResponse(FAIL_STATUS);
 		}
 	}

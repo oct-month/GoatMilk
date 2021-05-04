@@ -40,6 +40,7 @@ public class GoatMilkTestingSampleInternationalController extends BaseController
             return new GoatMilkTestingSampleInternationalResponse(SUCCESS_STATUS, data_list);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatMilkTestingSampleInternationalResponse(FAIL_STATUS);
         }
     }
@@ -53,6 +54,7 @@ public class GoatMilkTestingSampleInternationalController extends BaseController
             return new GoatMilkTestingSampleInternationalResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatMilkTestingSampleInternationalResponse(FAIL_STATUS);
         }
     }
@@ -67,6 +69,7 @@ public class GoatMilkTestingSampleInternationalController extends BaseController
             return new GoatMilkTestingSampleInternationalResponse(SUCCESS_STATUS);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatMilkTestingSampleInternationalResponse(FAIL_STATUS);
         }
     }
@@ -81,6 +84,7 @@ public class GoatMilkTestingSampleInternationalController extends BaseController
             return new GoatMilkTestingSampleInternationalResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatMilkTestingSampleInternationalResponse(FAIL_STATUS);
         }
     }
@@ -95,6 +99,7 @@ public class GoatMilkTestingSampleInternationalController extends BaseController
             return new GoatMilkTestingSampleInternationalResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatMilkTestingSampleInternationalResponse(FAIL_STATUS);
         }
     }

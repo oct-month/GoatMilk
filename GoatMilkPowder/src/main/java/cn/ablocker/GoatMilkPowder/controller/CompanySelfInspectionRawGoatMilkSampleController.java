@@ -39,6 +39,7 @@ public class CompanySelfInspectionRawGoatMilkSampleController extends BaseContro
             return new CompanySelfInspectionRawGoatMilkSampleResponse(SUCCESS_STATUS, data_list);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new CompanySelfInspectionRawGoatMilkSampleResponse(FAIL_STATUS);
         }
     }
@@ -52,6 +53,7 @@ public class CompanySelfInspectionRawGoatMilkSampleController extends BaseContro
             return new CompanySelfInspectionRawGoatMilkSampleResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new CompanySelfInspectionRawGoatMilkSampleResponse(FAIL_STATUS);
         }
     }
@@ -66,6 +68,7 @@ public class CompanySelfInspectionRawGoatMilkSampleController extends BaseContro
             return new CompanySelfInspectionRawGoatMilkSampleResponse(SUCCESS_STATUS);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new CompanySelfInspectionRawGoatMilkSampleResponse(FAIL_STATUS);
         }
     }
@@ -80,6 +83,7 @@ public class CompanySelfInspectionRawGoatMilkSampleController extends BaseContro
             return new CompanySelfInspectionRawGoatMilkSampleResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new CompanySelfInspectionRawGoatMilkSampleResponse(FAIL_STATUS);
         }
     }
@@ -95,6 +99,7 @@ public class CompanySelfInspectionRawGoatMilkSampleController extends BaseContro
             return new CompanySelfInspectionRawGoatMilkSampleResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new CompanySelfInspectionRawGoatMilkSampleResponse(FAIL_STATUS);
         }
     }

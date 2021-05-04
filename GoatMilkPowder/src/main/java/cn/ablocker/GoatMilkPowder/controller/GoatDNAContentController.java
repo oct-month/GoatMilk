@@ -29,6 +29,7 @@ public class GoatDNAContentController extends BaseController
             return new GoatDNAContentResponse(SUCCESS_STATUS, data_list);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatDNAContentResponse(FAIL_STATUS);
         }
     }
@@ -42,6 +43,7 @@ public class GoatDNAContentController extends BaseController
             return new GoatDNAContentResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatDNAContentResponse(FAIL_STATUS);
         }
     }
@@ -56,6 +58,7 @@ public class GoatDNAContentController extends BaseController
             return new GoatDNAContentResponse(SUCCESS_STATUS);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatDNAContentResponse(FAIL_STATUS);
         }
     }
@@ -70,6 +73,7 @@ public class GoatDNAContentController extends BaseController
             return new GoatDNAContentResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatDNAContentResponse(FAIL_STATUS);
         }
     }
@@ -84,6 +88,7 @@ public class GoatDNAContentController extends BaseController
             return new GoatDNAContentResponse(SUCCESS_STATUS, data);
         }
         catch (Exception e) {
+            System.out.println(e);
             return new GoatDNAContentResponse(FAIL_STATUS);
         }
     }
