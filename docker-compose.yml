@@ -23,22 +23,13 @@ services:
     container_name: goat-redis
     restart: on-failure
   
-  goat-nginx:
-    image: nginx:stable-alpine
-    container_name: goat-nginx
-    restart: on-failure
-    volumes:
-      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
-    ports:
-      - "80:80"
-  
   goat-img-file:
     build: ./GoatMilkFile/
     image: sun/goat-milk-file:latest
     container_name: goat-img-file
     restart: on-failure
     volumes:
-      ./GoatMilkFile/static:/GoatMilkFile/static
+      - ./GoatMilkFile/static:/GoatMilkFile/static
     environment:
       MYSQL_HOST: goat-mysql
     depends_on:
@@ -64,3 +55,16 @@ services:
     depends_on: 
       - goat-img-file
       - goat-milk-powder
+  
+  goat-nginx:
+    image: nginx:stable-alpine
+    container_name: goat-nginx
+    restart: on-failure
+    volumes:
+      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - goat-img-file
+      - goat-milk-powder
+      - goat-milk-web
