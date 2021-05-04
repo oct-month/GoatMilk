@@ -1,5 +1,5 @@
 docker run \
-    --name GoatMilkWeb \
+    --name goat-milk-web \
     --network goat-milk \
     -d \
     sun/goat-milk-web

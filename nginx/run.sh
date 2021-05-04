@@ -1,5 +1,5 @@
 docker run \
-    --name nginx \
+    --name goat-nginx \
     --network goat-milk \
     -d \
     -p 80:80 \

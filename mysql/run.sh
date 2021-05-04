@@ -1,5 +1,5 @@
 docker run \
-    --name mysql \
+    --name goat-mysql \
     --network goat-milk \
     -p 3306:3306 \
     -v /root/GoatMilk/mysql/data:/var/lib/mysql \

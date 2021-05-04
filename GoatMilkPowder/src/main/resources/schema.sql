@@ -3,7 +3,6 @@ DROP TABLE IF EXISTS `羊奶粉产品检测_省内外_样品`;
 DROP TABLE IF EXISTS `公司自检_生羊乳_样品`;
 DROP TABLE IF EXISTS `羊奶粉dna含量`;
 DROP TABLE IF EXISTS `用户`;
-DROP TABLE IF EXISTS `图片`;
 
 
 CREATE TABLE IF NOT EXISTS `羊奶粉产品检测_国产进口_样品` (
@@ -135,13 +134,6 @@ CREATE TABLE IF NOT EXISTS `用户` (
     `username` varchar(100) NOT NULL PRIMARY KEY,
     `password` varchar(100) NOT NULL,
     `role` varchar(100) DEFAULT 'visitor'
-)
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE IF NOT EXISTS `图片` (
-    `url` varchar(100) NOT NULL PRIMARY KEY
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4

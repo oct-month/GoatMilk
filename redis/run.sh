@@ -1,5 +1,5 @@
 docker run \
-    --name redis \
+    --name goat-redis \
     --network goat-milk \
     -d \
     redis:alpine
