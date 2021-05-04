@@ -1,3 +1,7 @@
-SQLALCHEMY_DATABASE_URI = "mysql+pymysql://goat:goat@152.136.226.14:3306/GoatMilk?charset=utf8"
+import os
+
+mysql_host = os.getenv('MYSQL_HOST', 'goat-mysql')
+
+SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://goat:goat@{mysql_host}:3306/GoatMilk?charset=utf8"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = True
