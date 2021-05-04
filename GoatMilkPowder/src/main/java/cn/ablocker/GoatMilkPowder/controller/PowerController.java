@@ -6,6 +6,7 @@ import cn.ablocker.GoatMilkPowder.dao.UserDAO;
 import cn.ablocker.GoatMilkPowder.entity.User;
 import cn.ablocker.GoatMilkPowder.response.BaseResponse;
 import cn.ablocker.GoatMilkPowder.response.UserResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequestMapping("/api/power")
 public class PowerController extends BaseController
 {
+	@Autowired
 	private UserDAO dao;
 
 	@LoginNeeded
