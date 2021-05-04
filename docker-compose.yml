@@ -33,6 +33,7 @@ services:
     volumes:
       - ./GoatMilkFile/static:/GoatMilkFile/static
     environment:
+      PYTHONUNBUFFERED: 1
       MYSQL_HOST: goat-mysql
     depends_on:
       - goat-mysql

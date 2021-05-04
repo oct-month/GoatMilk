@@ -18,7 +18,7 @@
   <el-upload
     class="upload-demo"
     ref="upload"
-    action="http://goat.oct-month.top/upload"
+    action="http://goat.oct-month.top/api/nose/"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
     :on-success="handleSuccess"
@@ -33,6 +33,9 @@
 </template>
 
 <script>
+import axios from 'axios'
+axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
+
   export default {
     data() {
       return {
@@ -54,7 +57,9 @@
           alert("无更改权限，仅管理员可操作");
         }
         const _this = this
-        axios.delete('' + row)
+        axios.delete('http://goat.oct-month.top/api/nose/', {
+          data: {url: row}
+        })
           .then(res => {
             if (res.data.status === "success")
               _this.$alert(row+'删除成功','消息',{
@@ -83,22 +88,7 @@
         if (response.status == "success")
         {
           var url = response.data;
-          axios.post('http://goat.oct-month.top/api/imgs/', {
-            url: url,
-          })
-          .then(res => {
-            if (res.data.status == 'success')
-            {
-              console.log('上传成功');
-            }
-            else
-            {
-              console.log('上传失败');
-            }
-          })
-          .catch(error => {
-            console.log('上传失败');
-          })
+          console.log("上传成功：" + url)
         }
       },
       handleRemove(file, fileList) {
@@ -111,14 +101,11 @@
     mounted() {
       //获取数据库信息
       const that = this
-      axios.get('http://goat.oct-month.top/api/imgs/')
+      axios.get('http://goat.oct-month.top/api/nose/')
         .then(res => {
           if (res.data.status === "success")
           {
-            that.urls = []
-            res.data.data_list.forEach(e => {
-              that.urls.push(e['url'])
-            });
+            that.urls = res.data.data_list
             // console.log(that.tableData);
           }
         })
