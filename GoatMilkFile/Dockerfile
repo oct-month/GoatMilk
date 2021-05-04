@@ -5,10 +5,6 @@ ARG workdir=/GoatMilkFile
 
 WORKDIR ${workdir}
 COPY ./ ${workdir}/
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-RUN apk update
-RUN apk add build-base
-RUN pip install -i https://mirrors.bfsu.edu.cn/pypi/web/simple -r requirements.txt
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && apk update && apk add build-base && pip install -i https://mirrors.bfsu.edu.cn/pypi/web/simple -r requirements.txt
 
 ENTRYPOINT [ "flask", "run", "--host=0.0.0.0" ]
-
