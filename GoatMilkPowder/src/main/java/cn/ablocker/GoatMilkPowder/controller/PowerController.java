@@ -42,9 +42,9 @@ public class PowerController extends BaseController
 	{
 		try {
 			User source = dao.getOne(user.getUsername());
-			user.setPassword(source.getPassword());
-			dao.saveAndFlush(user);
-			return new UserResponse(SUCCESS_STATUS, user);
+			source.setRole(user.getRole());
+			dao.saveAndFlush(source);
+			return new UserResponse(SUCCESS_STATUS, source);
 		}
 		catch (Exception e) {
 			System.out.println(e);
