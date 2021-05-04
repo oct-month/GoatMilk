@@ -2,9 +2,21 @@ from flask import Flask, request
 from flask.helpers import url_for
 import os
 
+import config
+from exts import db
+from dao import nose, tongue
+
 app = Flask(__name__)
 # app.secret_key = b'{k(\x1dDgr\xcb\x02\x04\x07d\x1a\x0c\xd2\x0b'
+app.config.from_object(config)
+db.init_app(app)
+with app.app_context():
+    db.create_all()
+app.register_blueprint(nose.bp, url_prefix='/nose')
+app.register_blueprint(tongue.bp, url_prefix='/tongue')
+
 base_url = os.getenv('BASE_URL', '')
+
 
 @app.route("/upload", methods=['POST'])
 def upload_file():

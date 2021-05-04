@@ -1,0 +1,3 @@
+SQLALCHEMY_DATABASE_URI = "mysql+pymysql://goat:goat@152.136.226.14:3306/GoatMilk?charset=utf8"
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_ECHO = True
