@@ -3,4 +3,3 @@ simplejson
 python-dotenv
 flask-sqlalchemy
 pymysql
-cryptography
