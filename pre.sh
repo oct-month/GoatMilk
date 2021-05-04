@@ -2,7 +2,9 @@ export WORKDIR=$(pwd)
 
 mkdir $WORKDIR/mysql/sql
 mkdir $WORKDIR/GoatMilkFile/static
-cp $WORKDIR/GoatMilkPowder/src/main/resources/*.sql $WORKDIR/mysql/sql/
+rm -rf $WORKDIR/mysql/data
+cp $WORKDIR/GoatMilkPowder/src/main/resources/schema.sql $WORKDIR/mysql/sql/a.sql
+cp $WORKDIR/GoatMilkPowder/src/main/resources/data.sql $WORKDIR/mysql/sql/b.sql
 
 cd $WORKDIR/GoatMilkPowder
 sh pre.sh
