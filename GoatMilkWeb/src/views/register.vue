@@ -45,6 +45,7 @@ export default {
       axios.post("http://goat.oct-month.top/api/account/registry",{
             username:this.name,
             password:this.password,
+            role: "vistor"
           })
         .then(res => {
             // console.log(res.data.status)

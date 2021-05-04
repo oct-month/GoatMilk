@@ -1,17 +1,22 @@
 <template>
   <el-table
     :data="tableData"
-    style="width: 40%"
+    style="width: 45%"
     max-height="750">
     <el-table-column
       fixed
-      prop="name"
+      prop="username"
       label="昵称"
       width="150">
     </el-table-column>
-    <el-table-column
+    <!-- <el-table-column
       prop="password"
       label="密码"
+      width="120">
+    </el-table-column> -->
+    <el-table-column
+      prop="role"
+      label="权限"
       width="120">
     </el-table-column>
     <el-table-column
@@ -37,31 +42,34 @@ axios.defaults.withCredentials = true
   export default {
     methods: {
       update(index, rows) {
+        // console.log(rows[index])
         if(this.$store.state.user_role !== "admin"){
           alert("无修改权限")
         }
         const _this = this
-        axios.post()
+        rows[index]["role"] = "admin"
+        axios.put('http://goat.oct-month.top/api/power/', rows[index])
           .then(res =>{
             if(res.data.status === "success")
-              _this.$alert(row.id+'修改成功','消息',{
+              _this.$alert(rows[index]["username"]+'修改成功','消息',{
                 confirmButtonText: '确定',
                 callback: action => {
-                  window.location.reload()
+                  // window.location.reload()
                   //动态刷新
-              }
-          })
-      })
+                }
+              })
+        })
+      },
     },
     mounted() {
       const that = this
-      axios.get('')
+      axios.get('http://goat.oct-month.top/api/power/')
         .then(res => {
           if (res.data.status === "success")
           {
             that.tableData = res.data.data_list
             // console.log(that.tableData);
-            that.changePage(1)
+            //that.changePage(1)
           }
         })
         .catch(error => {
@@ -123,6 +131,5 @@ axios.defaults.withCredentials = true
         }]
       }
     },
-    }
   }
 </script>
