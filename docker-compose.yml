@@ -14,6 +14,7 @@ services:
       - ./mysql/data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 10101010
+      MYSQL_DATABASE: GoatMilk
     command:
       - "--character-set-server=utf8mb4"
       - "--collation-server=utf8mb4_unicode_ci"
