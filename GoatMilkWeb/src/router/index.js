@@ -23,6 +23,7 @@ import DNAFind from '../views/DNAFind'
 import DNAUpdate from '../views/DNAUpdate'
 import NOSE from '../views/NOSE'
 import TONGUE from '../views/TONGUE'
+import Power from '../views/Power' 
 
 Vue.use(VueRouter)
 
@@ -178,6 +179,18 @@ const routes = [
         path: '/Test',
         name: '产地判断',
         component: Test
+      }]
+  },
+  {
+    path: "/navigation",
+    name: "权限管理",
+    component: Index,
+    show: true,
+    children:[
+      {
+        path: '/Power',
+        name: '权限管理',
+        component: Power
       }]
   },
     {
