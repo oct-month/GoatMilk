@@ -34,7 +34,7 @@
   </el-container> --> 
    <!--"style="background-color: rgb(228, 101, 146)  -->
 
-  <el-main style="background-color: rgb(58, 101, 146)">
+  <el-main style="background-color: rgb(218, 101, 146)">
     <router-view></router-view>
   </el-main>
   </el-container>

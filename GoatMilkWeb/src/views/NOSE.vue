@@ -1,5 +1,6 @@
 <template>
   <div class="demo-image__lazy">
+    <center>电子鼻图谱</center>
   <div class="block" v-for="url in urls" :key='url'>
     <!--循环遍历返回的url，输出图片 -->
     <el-row :gutter="0">
@@ -8,6 +9,9 @@
         style="width:300px;height:300px"
         :src='url'>
         </el-image>
+
+        <textarea style="width:300px;height:150px">这里是介绍文本</textarea>
+
         <el-button @click="deletepicture(url)" type="primary" icon="el-icon-delete">删除</el-button>
     <!-- 生成图片同时，生成其对应的删除按钮，利用url进行图片识别 -->
     </el-row>

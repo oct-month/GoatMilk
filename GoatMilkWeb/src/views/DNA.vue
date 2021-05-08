@@ -1,5 +1,6 @@
 <template>
     <div>
+      <center>DNA数据</center>
         <el-table
         :data="currentTabelData"
         border

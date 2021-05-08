@@ -1,12 +1,15 @@
 <template>
   <div class="demo-image__lazy">
-  <div class="block" v-for="url in urls" :key='url'>
+    <center>电子舌图谱</center>
+      <div class="block" v-for="url in urls" :key='url'>
     <el-row :gutter="0">
     
         <el-image
         style="width:300px;height:300px"
         :src='url'>
         </el-image>
+
+        <textarea style="width:300px;height:150px">这里是介绍文本</textarea>
      
     
      
