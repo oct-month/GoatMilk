@@ -1,3 +1,4 @@
+from typing import Dict, List
 from flask import Blueprint, request, url_for
 import os
 
@@ -7,16 +8,17 @@ from exts import db
 base_url = os.getenv('BASE_URL', '')
 bp = Blueprint('nose', __name__)
 
-def get_urls():
-    urls = ImgFileNose.query.all()
-    return [str(url) for url in urls]
+def get_urls() -> List[Dict[str, str]]:
+    imgs = ImgFileNose.query.all()
+    return [img.to_json() for img in imgs]
 
-def add_url(url: str):
-    img_nose = ImgFileNose(url=url)
+def add_url(url: str, desc: str) -> ImgFileNose:
+    img_nose = ImgFileNose(url=url, desc=desc)
     db.session.add(img_nose)
     db.session.commit()
+    return img_nose
 
-def delete_url(url: str):
+def delete_url(url: str) -> None:
     img_nose = ImgFileNose.query.filter(ImgFileNose.url == url).first()
     db.session.delete(img_nose)
     db.session.commit()
@@ -53,13 +55,14 @@ def delete_u():
 def upload_file():
     """文件上传"""
     f = request.files.get('file')
+    desc = request.files.get('desc')
     filename = str(hash(f)) + os.path.splitext(f.filename)[-1]
     f.save(f'static/{filename}')
     file_url= base_url + url_for("static", filename=filename)
-    add_url(file_url)
+    t = add_url(file_url, desc)
     return {
         'status': 'success',
-        'data': file_url,
+        'data': t.to_json(),
         'data_list': None
     }
 
