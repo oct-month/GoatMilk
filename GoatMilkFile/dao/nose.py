@@ -55,7 +55,7 @@ def delete_u():
 def upload_file():
     """文件上传"""
     f = request.files.get('file')
-    desc = request.files.get('desc')
+    desc = request.form.get('desc')
     filename = str(hash(f)) + os.path.splitext(f.filename)[-1]
     f.save(f'static/{filename}')
     file_url= base_url + url_for("static", filename=filename)
