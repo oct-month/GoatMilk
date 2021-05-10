@@ -81,7 +81,7 @@ export default {
 #background{
   width: 100%;
     height: 100%;
-    background: url("../assets/be.jpg");
+    background: url("../assets/bg.jpg");
     background-size:100% 100%;
     position: fixed;
     top: 0;
