@@ -54,7 +54,7 @@
 
 #container {
   height: 100%;
-  border: 1px solid rgb(238, 238, 238);
+  border: 1px solid #c3b3d1;
 }
 </style>
 
@@ -67,13 +67,13 @@
 <style scoped>
   .el-header {
     background-color: #c3b3d1;
-    color: #333;
+    color: rgb(250, 240, 240);
     /* line-height: 60px; */
   }
 
   .el-body {
-    background-color: #d1b3b3;
-    color: #333;
+    background-color: #c3b3d1;
+    color: rgb(241, 237, 237);
     /* line-height: 60px; */
   }
 
