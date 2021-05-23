@@ -1,14 +1,15 @@
 <template>
   <div class="demo-image__lazy">
-  <div class="block" v-for="url in urls" :key='url'>
+    <center>电子鼻图谱</center>
+  <div class="block" v-for="img in imgs" :key='img.url'>
     <!--循环遍历返回的url，输出图片 -->
     <el-row :gutter="0">
-    
         <el-image
         style="width:300px;height:300px"
-        :src='url'>
+        :src='img.url'>
         </el-image>
-        <el-button @click="deletepicture(url)" type="primary" icon="el-icon-delete">删除</el-button>
+        <textarea style="width:300px;height:150px" v-model="img.desc">这里是介绍文本</textarea>
+        <el-button @click="deletepicture(img.url)" type="primary" icon="el-icon-delete">删除</el-button>
     <!-- 生成图片同时，生成其对应的删除按钮，利用url进行图片识别 -->
     </el-row>
   </div>
@@ -19,6 +20,7 @@
     class="upload-demo"
     ref="upload"
     action="http://goat.oct-month.top/api/nose/"
+    :data="fileForm"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
     :on-success="handleSuccess"
@@ -26,7 +28,10 @@
     :auto-upload="false">
     <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
     <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
-    <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+    <div slot="tip" class="el-upload__tip">
+      <textarea style="width:300px;height:150px" v-model="fileForm.desc">这里是介绍文本</textarea>
+    </div>
+    
   </el-upload>
   <!-- handleremove删除选中的图片，handlepreview查看图片信息，filelist为输入的图片，submitupload为上传函数 -->
 </div>
@@ -39,14 +44,26 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
   export default {
     data() {
       return {
+        //文本信息
+        fileForm: {
+          desc: ""
+        },
         //上传的
         fileList: [{}],
         //返回的
-        urls: [
-          'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
-          'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
-          'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
-          'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+        imgs: [
+          {
+            "url": "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
+            "desc": "wdnmd"
+          },
+          {
+            "url": "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
+            "desc": "wdnmd"
+          }
+          // 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+          // 'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+          // 'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+          // 'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
         ]
       }
     },
@@ -87,7 +104,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
       handleSuccess(response, file) {
         if (response.status == "success")
         {
-          var url = response.data;
+          var url = response.data["url"];
           console.log("上传成功：" + url)
         }
       },
@@ -105,7 +122,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
         .then(res => {
           if (res.data.status === "success")
           {
-            that.urls = res.data.data_list
+            that.imgs = res.data.data_list
             // console.log(that.tableData);
           }
         })

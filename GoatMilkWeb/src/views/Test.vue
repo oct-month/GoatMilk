@@ -3,6 +3,15 @@
   <h1 class="word-v-middle">请输入判断指标数据</h1>
   <h1 class="word-vv-middle">提示：请输入不少于2个指标数据</h1>
 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="350px">
+  <el-form-item label="脂蛋比" prop="脂蛋比">
+    <el-input v-model="ruleForm['脂蛋比']" style="width:300px"></el-input>
+  </el-form-item>
+  <el-form-item label="钙磷比" prop="钙磷比">
+    <el-input v-model="ruleForm['钙磷比']" style="width:300px"></el-input>
+  </el-form-item>
+  <el-form-item label="反式脂肪酸与总脂肪酸的比值" prop="反式脂肪酸与总脂肪酸的比值">
+    <el-input v-model="ruleForm['反式脂肪酸与总脂肪酸的比值']" style="width:300px"></el-input>
+  </el-form-item>
   <el-form-item label="硒(mg/kg)" prop="硒">
     <el-input v-model="ruleForm['硒']" style="width:300px"></el-input>
   </el-form-item>
@@ -14,15 +23,6 @@
   </el-form-item>
   <el-form-item label="酸度(°T)" prop="酸度">
     <el-input v-model="ruleForm['酸度']" style="width:300px"></el-input>
-  </el-form-item>
-  <el-form-item label="脂蛋比" prop="脂蛋比">
-    <el-input v-model="ruleForm['脂蛋比']" style="width:300px"></el-input>
-  </el-form-item>
-  <el-form-item label="钙磷比" prop="钙磷比">
-    <el-input v-model="ruleForm['钙磷比']" style="width:300px"></el-input>
-  </el-form-item>
-  <el-form-item label="反式脂肪酸与总脂肪酸的比值" prop="反式脂肪酸与总脂肪酸的比值">
-    <el-input v-model="ruleForm['反式脂肪酸与总脂肪酸的比值']" style="width:300px"></el-input>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="doSearch('ruleForm')">检查信息</el-button>
@@ -125,7 +125,7 @@ justify-content: center;
 height: 50px;
 margin-top: 0px;
 margin-left: 50px;
-color: #87878a;
+color: #06061b;
 white-space: normal;
 }
   .word-v-middle{

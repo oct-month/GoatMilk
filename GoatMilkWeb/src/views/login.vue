@@ -17,14 +17,14 @@
                 <label>密码：</label><input type="password" name="password" v-model.trim="password" placeholder="请输入密码">
                 <br/>
               </div>
-              <div class="keep">
+              <!-- <div class="keep">
                 <input @click="handlesave" id="yes" type="radio" value="0" >
                 <label for="yes">保持登录状态</label>
-              </div>
+              </div> -->
           </div>
           
         </form>
-              <button  type="submit" @click.prevent="login">登录			</button>
+              <button  type="submit" @click.prevent="login">登录</button>
               <!-- v-on点击按钮触发handlelogin方法 -->
               <button  @click.prevent="handleregister">注册</button>
           <router-view></router-view>
@@ -106,11 +106,13 @@ export default {
 #background{
     width: 100%;
     height: 100%;
-    background: url("../assets/be.jpg");
-    background-size:100% 100%;
+    background: url("../assets/bg.jpg");
+    background-repeat: no-repeat;
+    border-left: 10cm solid  rgb(99, 120, 226);
+    background-size:50% 100%;
+    background-color: rgb(99, 158, 226);
     position: fixed;
     top: 0;
-    left: 0;
 }
 
 .container{
@@ -118,7 +120,7 @@ export default {
   height: 300px;
   position: absolute;
   top: 35%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%,-50%);
   background:#00000090;
   text-align: center;

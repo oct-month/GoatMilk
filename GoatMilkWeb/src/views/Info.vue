@@ -1,5 +1,6 @@
 <template>
   <div>
+    <center>自检羊奶粉</center>
   <el-table
     id="myTable"
     :data="currentTabelData"

@@ -79,20 +79,22 @@ export default {
 //css
 <style scoped>
 #background{
-  width: 100%;
+    width: 100%;
     height: 100%;
-    background: url("../assets/be.jpg");
-    background-size:100% 100%;
+    background: url("../assets/bg.jpg");
+    background-repeat: no-repeat;
+    border-left: 10cm solid  rgb(99, 120, 226);
+    background-size:50% 100%;
+    background-color: rgb(99, 120, 226);
     position: fixed;
     top: 0;
-    left: 0;
 }
 #contain{
   width: 500px;
   height: 410px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%,-50%);
   background:#00000090;
   text-align: center;

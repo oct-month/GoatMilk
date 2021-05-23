@@ -1,7 +1,7 @@
 <template>
 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="200px" class="demo-ruleForm">
   <el-form-item label="id" prop="id">
-    <el-input v-model="ruleForm['id']" style="width:300px"></el-input>
+    <el-input v-model="ruleForm['id']" style="width:300px" disabled >系统设定</el-input>
   </el-form-item>
   <el-form-item label="Abs260" prop="Abs260">
     <el-input v-model="ruleForm['Abs260']" style="width:300px"></el-input>

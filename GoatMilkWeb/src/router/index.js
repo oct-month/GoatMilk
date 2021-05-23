@@ -52,11 +52,35 @@ const routes = [
       },
       {
         path: '/BrangFind',
-        name: '快速查询',
+        name: '市售产品快速查询',
         component: BrandFind
       },
-
-    ],
+      {
+        path: '/DNA',
+        name: 'DNA数据',
+        component: DNA
+      },
+      {
+        path: '/AddDNA',
+        name: '添加DNA信息',
+        component: AddDNA
+      },
+      {
+        path: '/DNAFind',
+        name: 'DNA快速查询',
+        component: DNAFind
+      },
+      {
+        path: '/NOSE',
+        name: '电子鼻图谱',
+        component: NOSE
+      },
+      {
+        path: '/TONGUE',
+        name: '电子舌图谱',
+        component: TONGUE
+      }
+    ]
   },
   {
     path: '/BrandUpdate',
@@ -124,54 +148,54 @@ const routes = [
     component: MilkUpdate,
     show: false
   },
-  {
-    path: "/navigation",
-    name: "DNA数据",
-    component: Index,
-    show: true,
-    children:[
-      {
-        path: '/DNA',
-        name: 'DNA数据',
-        component: DNA
-      },
-      {
-        path: '/AddDNA',
-        name: '添加DNA信息',
-        component: AddDNA
-      },
-      {
-        path: '/DNAFind',
-        name: '快速查询',
-        component: DNAFind
-      }
-    ]
-  },
+  // {
+  //   path: "/navigation",
+  //   name: "DNA数据",
+  //   component: Index,
+  //   show: true,
+  //   // children:[
+  //   //   {
+  //   //     path: '/DNA',
+  //   //     name: 'DNA数据',
+  //   //     component: DNA
+  //   //   },
+  //   //   {
+  //   //     path: '/AddDNA',
+  //   //     name: '添加DNA信息',
+  //   //     component: AddDNA
+  //   //   },
+  //   //   {
+  //   //     path: '/DNAFind',
+  //   //     name: '快速查询',
+  //   //     component: DNAFind
+  //   //   }
+  //   // ]
+  // },
   {
     path: '/DNAUpdate',
     component: DNAUpdate,
     show: false
   },
+  // {
+  //   path: "/navigation",
+  //   name: "电子鼻、电子舌图谱",
+  //   component: Index,
+  //   show: true,
+  //   children:[
+  //     {
+  //       path: '/NOSE',
+  //       name: '电子鼻图谱',
+  //       component: NOSE
+  //     },
+  //     {
+  //       path: '/TONGUE',
+  //       name: '电子舌图谱',
+  //       component: TONGUE
+  //     }]
+  // },
   {
     path: "/navigation",
-    name: "电子鼻、电子舌图谱",
-    component: Index,
-    show: true,
-    children:[
-      {
-        path: '/NOSE',
-        name: '电子鼻图谱',
-        component: NOSE
-      },
-      {
-        path: '/TONGUE',
-        name: '电子舌图谱',
-        component: TONGUE
-      }]
-  },
-  {
-    path: "/navigation",
-    name: "市销产品",
+    name: "产地判断",
     component: Index,
     show: true,
     children:[

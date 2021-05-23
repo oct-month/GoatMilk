@@ -30,6 +30,7 @@
           size="small">
           权限升级
         </el-button>
+        <el-button @click="deletepart(scope.$index, tableData)" type="text" size="small">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -41,6 +42,29 @@ axios.defaults.withCredentials = true
 
   export default {
     methods: {
+      deletepart(index,rows){
+         //console.log(row);
+         if(this.$store.state.user_role !== 'admin'){
+          alert("无更改权限，仅管理员可操作");
+        }
+        const _this = this
+        axios.delete('http://goat.oct-month.top/api/power/' , {
+          data: {username: rows[index]["username"]}
+        })
+          .then(res => {
+            if (res.data.status === "success")
+              _this.$alert(rows[index]["username"]+'删除成功','消息',{
+                confirmButtonText: '确定',
+                callback: action => {
+                  window.location.reload()
+                  //动态刷新
+                }
+              })
+        })
+        .catch(error => {
+          console.error(error);
+        })
+      },
       update(index, rows) {
         // console.log(rows[index])
         if(this.$store.state.user_role !== "admin"){

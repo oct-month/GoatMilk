@@ -37,6 +37,21 @@ public class PowerController extends BaseController
 
 	@LoginNeeded
 	@AdminNeeded
+	@DeleteMapping("/")
+	public BaseResponse deleteUser(@RequestBody User user, HttpServletRequest request, HttpServletResponse response)
+	{
+		try {
+			dao.deleteById(user.getUsername());
+			return new UserResponse(SUCCESS_STATUS);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+			return new UserResponse(FAIL_STATUS);
+		}
+	}
+
+	@LoginNeeded
+	@AdminNeeded
 	@PutMapping("/")
 	public BaseResponse changePower(@RequestBody User user, HttpServletRequest request, HttpServletResponse response)
 	{
