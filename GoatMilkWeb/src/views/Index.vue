@@ -34,7 +34,7 @@
   </el-container> --> 
    <!--"style="background-color: rgb(228, 101, 146)  -->
 
-  <el-main style="background-color: rgb(218, 101, 146)">
+  <el-main>
     <router-view></router-view>
   </el-main>
   </el-container>
@@ -54,7 +54,7 @@
 
 #container {
   height: 100%;
-  border: 1px solid #c3b3d1;
+  border: 1px solid #601f99;
 }
 </style>
 
@@ -66,13 +66,13 @@
 
 <style scoped>
   .el-header {
-    background-color: #c3b3d1;
+    background-color: #0b53a7;
     color: rgb(250, 240, 240);
     /* line-height: 60px; */
   }
 
   .el-body {
-    background-color: #c3b3d1;
+    background-color: #7331ad;
     color: rgb(241, 237, 237);
     /* line-height: 60px; */
   }

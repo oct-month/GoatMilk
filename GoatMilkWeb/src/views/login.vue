@@ -108,9 +108,9 @@ export default {
     height: 100%;
     background: url("../assets/bg.jpg");
     background-repeat: no-repeat;
-    border-left: 10cm solid  rgb(99, 120, 226);
+    border-left: 10cm solid  rgb(46, 140, 210);
     background-size:50% 100%;
-    background-color: rgb(99, 158, 226);
+    background-color: rgb(80, 151, 215);
     position: fixed;
     top: 0;
 }
