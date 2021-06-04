@@ -1,11 +1,12 @@
 <template>
 <div id="background">
+  <h1 class="containerh1">羊奶粉信息管理系统</h1>
   <!-- <div class="background">
     <img :src="assets/bc.jpg" width="100%" height="100%" alt="" />
   </div> -->
     <div class="container">
         <form action="">
-          <h1>羊奶粉信息管理系统</h1>
+          
           <h2>Login</h2>
           <div class="form">
               <div class="item">
@@ -109,30 +110,30 @@ export default {
     background: url("../assets/bg.jpg");
     background-repeat: no-repeat;
     border-left: 10cm solid  rgb(46, 140, 210);
-    background-size:50% 100%;
+    background-size:60% 110%;
     background-color: rgb(80, 151, 215);
     position: fixed;
     top: 0;
 }
 
 .container{
-  width: 480px;
+  width: 450px;
   height: 300px;
   position: absolute;
-  top: 35%;
-  left: 25%;
+  top: 40%;
+  left: 26%;
   transform: translate(-50%,-50%);
-  background:#00000090;
+  background:rgba(0, 0, 0, 0.0);
   text-align: center;
   border-radius: 20px;
   margin-top: 10px;
 }
-.container h1{
-  color: aliceblue;
-  margin-left: 20px;
+.containerh1{
+  color: rgb(13, 20, 26);
+  margin-left: 270px;
 }
 .item {
-  color: white;
+  color: rgb(12, 5, 5);
   margin-left: 15%;
   margin-top: 35px;
   font-size: 20px;

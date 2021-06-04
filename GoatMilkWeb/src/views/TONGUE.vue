@@ -8,7 +8,7 @@
         style="width:300px;height:300px"
         :src='img.url'>
         </el-image>
-        <textarea style="width:300px;height:150px" v-model="img.desc">这里是介绍文本</textarea>
+        <textarea style="width:300px;height:290px" v-model="img.desc">这里是介绍文本</textarea>
         <el-button @click="deletepicture(img.url)" type="primary" icon="el-icon-delete">删除</el-button>
     <!-- 生成图片同时，生成其对应的删除按钮，利用url进行图片识别 -->
     </el-row>
