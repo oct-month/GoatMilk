@@ -4,8 +4,8 @@
       <el-form :inline="true" class="demo-form-inline">
         <el-row>
           <el-col :span="8">
-            <el-form-item>
-              <el-select v-model="searchMetaData.营养指标.key" placeholder="营养指标" style="width:400px">
+            <el-form-item class="select-software">
+              <el-select v-model="searchMetaData.营养指标.key" placeholder="营养指标" style="color:#ffffff">
                 <el-option label="蛋白质" value="蛋白质"></el-option>
                 <el-option label="脂肪" value="脂肪"></el-option>
                 <el-option label="非脂乳固体" value="非脂乳固体"></el-option>
@@ -15,12 +15,12 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.营养指标.value" placeholder="请输入搜索关键字" class="input" />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.营养指标.jump" placeholder="请输入波动范围" class="input" />
             </el-form-item>
           </el-col>
@@ -28,7 +28,7 @@
 
         <el-row>
           <el-col span="8">
-          <el-form-item>
+          <el-form-item class="select-software">
             <el-select v-model="searchMetaData.维生素类.key" placeholder="维生素类" style="width:400px">
               <el-option label="维生素A" value="维生素A"></el-option>
               <el-option label="维生素E" value="维生素E"></el-option>
@@ -46,12 +46,12 @@
           </el-form-item>
           </el-col>
           <el-col span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.维生素类.value" placeholder="请输入搜索关键字" class="input" />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.维生素类.jump" placeholder="请输入波动范围" class="input" />
             </el-form-item>
           </el-col>
@@ -59,7 +59,7 @@
      
         <el-row>
           <el-col span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-select v-model="searchMetaData.矿物质类.key" placeholder="矿物质类" style="width:400px">
                 <el-option label="钙" value="钙"></el-option>
                 <el-option label="铁" value="铁"></el-option>
@@ -78,12 +78,12 @@
           </el-col>
 
           <el-col span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.矿物质类.value" placeholder="请输入搜索关键字" class="input" />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.矿物质类.jump" placeholder="请输入波动范围" class="input" />
             </el-form-item>
           </el-col>
@@ -91,7 +91,7 @@
 
         <el-row>
           <el-col span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-select v-model="searchMetaData.氨基酸类.key" placeholder="氨基酸类" style="width:400px">
                 <el-option label="Asp" value="Asp"></el-option>
                 <el-option label="Thr" value="Thr"></el-option>
@@ -114,12 +114,12 @@
             </el-form-item>
           </el-col>
           <el-col span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.氨基酸类.value" placeholder="请输入搜索关键字" class="input" />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.氨基酸类.jump" placeholder="请输入波动范围" class="input" />
             </el-form-item>
           </el-col>
@@ -127,7 +127,7 @@
         
         <el-row>
           <el-col span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-select v-model="searchMetaData.其他.key" placeholder="其他" style="width:400px">
                 <el-option label="水分" value="水分"></el-option>
                 <el-option label="酸度" value="酸度"></el-option>
@@ -138,18 +138,18 @@
             </el-form-item>
           </el-col>
           <el-col span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.其他.value" placeholder="请输入搜索关键字" class="input" />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item>
+            <el-form-item class="select-software">
               <el-input v-model="searchMetaData.其他.jump" placeholder="请输入波动范围" class="input" />
             </el-form-item>
           </el-col>
         </el-row>
         <el-form-item>
-            <el-button type="primary" @click="doSearch">查询</el-button>
+            <el-button @click="doSearch">查询</el-button>
         </el-form-item>
       </el-form>
 
@@ -617,6 +617,11 @@ export default {
 .confirm {
   position: absolute;
   left: 20px;
+}
+.select-software{
+  ::placeholder{
+    color: #000;
+  }
 }
 </style>
 

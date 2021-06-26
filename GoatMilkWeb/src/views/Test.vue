@@ -25,7 +25,7 @@
     <el-input v-model="ruleForm['酸度']" style="width:300px"></el-input>
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" @click="doSearch('ruleForm')">检查信息</el-button>
+    <el-button @click="doSearch('ruleForm')">检查信息</el-button>
     <el-button @click="resetForm('ruleForm')">重置</el-button>
   </el-form-item>
   <el-form-item label="检测结果为">
