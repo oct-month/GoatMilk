@@ -82,10 +82,24 @@ EXCLUDE = [
     'public'
 ]
 
+TARGET = './'
+EXCLUDE = [
+    'data',
+    '.venv',
+    'dist',
+    'target',
+    'node_modules',
+    '.git',
+    '__pycache__',
+    'static'
+]
+
 result = 0
+
 
 def go(path: str) -> None:
     global result
+    print(path)
     for e in EXCLUDE:
         if e in path:
             return
@@ -94,17 +108,16 @@ def go(path: str) -> None:
         if os.path.isdir(t):
             go(t)
         elif os.path.isfile(t):
-            with open(t, 'r', encoding='UTF-8') as f:
-                result += len(f.readlines())
+            try:
+                with open(t, 'r', encoding='UTF-8') as f:
+                    for l in f.readlines():
+                        if l.strip() != '':
+                            result += 1
+                    # result += len(f.readlines())
+            except Exception:
+                pass
 
 
 if __name__ == '__main__':
     go(TARGET)
     print(result)
-
-# 669
-# 3487
-# 19
-# 96
-# 5
-# 857
