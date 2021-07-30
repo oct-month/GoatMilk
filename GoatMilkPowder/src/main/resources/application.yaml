@@ -2,5 +2,4 @@ spring:
   config:
     name: application
   profiles:
-    # active: ${config}
-    active: dev
+    active: prod

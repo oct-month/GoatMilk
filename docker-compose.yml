@@ -17,8 +17,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=10101010
       - POSTGRES_DB=GoatMilk
-    # ports:
-    #     - "5432:5432"
+    ports:
+        - "5432:5432"
 
   goat-redis:
     image: redis:alpine
