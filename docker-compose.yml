@@ -6,25 +6,25 @@ networks:
     external: false
 
 services:
-  goat-mysql:
-    build: ./mysql/
-    image: sun/goat-mysql:latest
-    container_name: goat-mysql
+  goat-postgresql:
+    build: ./postgresql/
+    image: sun/goat-postgresql:latest
+    container_name: goat-postgresql
     restart: on-failure
     volumes:
-      - ./mysql/data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: 10101010
-      MYSQL_DATABASE: GoatMilk
-    command:
-      - "--character-set-server=utf8mb4"
-      - "--collation-server=utf8mb4_unicode_ci"
+      - ./postgresql/data:/var/lib/postgresql/data
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=10101010
+      - POSTGRES_DB=GoatMilk
+    # ports:
+    #     - "5432:5432"
 
   goat-redis:
     image: redis:alpine
     container_name: goat-redis
     restart: on-failure
-  
+
   goat-img-file:
     build: ./GoatMilkFile/
     image: sun/goat-milk-file:latest
@@ -34,22 +34,22 @@ services:
       - ./GoatMilkFile/static:/GoatMilkFile/static
     environment:
       PYTHONUNBUFFERED: 1
-      MYSQL_HOST: goat-mysql
+      POSTGRESQL_HOST: goat-postgresql
     depends_on:
-      - goat-mysql
-  
+      - goat-postgresql
+
   goat-milk-powder:
     build: ./GoatMilkPowder/
     image: sun/goat-milk-powder:latest
     container_name: goat-milk-powder
     restart: on-failure
     environment: 
-      MYSQL_HOST: goat-mysql
+      POSTGRESQL_HOST: goat-postgresql
       REDIS_HOST: goat-redis
     depends_on: 
-      - goat-mysql
+      - goat-postgresql
       - goat-redis
-    
+
   goat-milk-web:
     build: ./GoatMilkWeb/
     image: sun/goat-milk-web:latest
@@ -58,7 +58,7 @@ services:
     depends_on: 
       - goat-img-file
       - goat-milk-powder
-  
+
   goat-nginx:
     image: nginx:stable-alpine
     container_name: goat-nginx

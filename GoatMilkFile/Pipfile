@@ -1,5 +1,5 @@
 [[source]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+url = "https://mirrors.bfsu.edu.cn/pypi/web/simple"
 verify_ssl = true
 name = "custom"
 
@@ -8,7 +8,7 @@ flask = "*"
 simplejson = "*"
 python-dotenv = "*"
 flask-sqlalchemy = "*"
-pymysql = "*"
+psycopg2 = "*"
 
 [dev-packages]
 mypy = "*"
