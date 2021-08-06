@@ -1,0 +1,26 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/GoatMilk
+    username: postgres
+    password: 10101010
+    driver-class-name: org.postgresql.Driver
+    sql-script-encoding: utf-8
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+      temp:
+        use_jdbc_metadata_defaults: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+server:
+  port: 8080

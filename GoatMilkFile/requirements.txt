@@ -2,4 +2,4 @@ flask
 simplejson
 python-dotenv
 flask-sqlalchemy
-pymysql
+psycopg2
