@@ -60,7 +60,7 @@
           alert("无更改权限，仅管理员可操作");
         }
         const _this = this
-        axios.delete('http://goat.oct-month.top/api/CompanySelfInspectionRawGoatMilkSample/' + row.id)
+        axios.delete(process.env.VUE_APP_URL + '/api/CompanySelfInspectionRawGoatMilkSample/' + row.id)
           .then(res => {
             if (res.data.status === "success")
               _this.$alert(row.id+'删除成功','消息',{

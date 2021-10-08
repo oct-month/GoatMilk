@@ -19,7 +19,7 @@
   <el-upload
     class="upload-demo"
     ref="upload"
-    action="http://goat.oct-month.top/api/tongue/"
+    :action="`${process.env.VUE_APP_URL}/api/tongue/`"
     :data="fileForm"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
@@ -68,7 +68,7 @@ import axios from 'axios'
           alert("无更改权限，仅管理员可操作");
         }
         const _this = this
-        axios.delete('http://goat.oct-month.top/api/tongue/', {
+        axios.delete(process.env.VUE_APP_URL + '/api/tongue/', {
           data: {url: row}
         })
           .then(res => {
@@ -109,7 +109,7 @@ import axios from 'axios'
     },
     mounted() {
       const that = this
-      axios.get('http://goat.oct-month.top/api/tongue/')
+      axios.get(process.env.VUE_APP_URL + '/api/tongue/')
         .then(res => {
           if (res.data.status === "success")
           {

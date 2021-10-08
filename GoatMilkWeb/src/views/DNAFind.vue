@@ -194,7 +194,7 @@ export default {
   },
   mounted() {
     var that = this;
-    axios.get('http://goat.oct-month.top/api/GoatDNAContent/')
+    axios.get(process.env.VUE_APP_URL + '/api/GoatDNAContent/')
       .then(res => {
         if (res.data.status === "success") {
           that.brandData = res.data.data_list;

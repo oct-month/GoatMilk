@@ -48,7 +48,7 @@ axios.defaults.withCredentials = true
           alert("无更改权限，仅管理员可操作");
         }
         const _this = this
-        axios.delete('http://goat.oct-month.top/api/power/' , {
+        axios.delete(process.env.VUE_APP_URL + '/api/power/' , {
           data: {username: rows[index]["username"]}
         })
           .then(res => {
@@ -72,7 +72,7 @@ axios.defaults.withCredentials = true
         }
         const _this = this
         rows[index]["role"] = "admin"
-        axios.put('http://goat.oct-month.top/api/power/', rows[index])
+        axios.put(process.env.VUE_APP_URL + '/api/power/', rows[index])
           .then(res =>{
             if(res.data.status === "success")
               _this.$alert(rows[index]["username"]+'修改成功','消息',{
@@ -87,7 +87,7 @@ axios.defaults.withCredentials = true
     },
     mounted() {
       const that = this
-      axios.get('http://goat.oct-month.top/api/power/')
+      axios.get(process.env.VUE_APP_URL + '/api/power/')
         .then(res => {
           if (res.data.status === "success")
           {

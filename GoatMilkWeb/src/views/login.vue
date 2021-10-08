@@ -78,7 +78,7 @@ export default {
     login () {
       var that = this;
       axios
-        .post('http://goat.oct-month.top/api/account/login', {
+        .post(process.env.VUE_APP_URL + '/api/account/login', {
           username: that.name,
           password: that.password
         })

@@ -63,7 +63,7 @@ export default {
     handlefinish:function()
     {
       var _this = this
-      axios.post("http://goat.oct-month.top/api/account/registry",{
+      axios.post(process.env.VUE_APP_URL + "/api/account/registry",{
             username:this.name,
             password:this.password,
             code:this.code,

@@ -69,7 +69,7 @@ axios.defaults.withCredentials = true
           alert("无更改权限，仅管理员可操作");
         }
           const _this = this
-          axios.post('http://goat.oct-month.top/api/GoatMilkTestingSampleProvince/', this.ruleForm)
+          axios.post(process.env.VUE_APP_URL + '/api/GoatMilkTestingSampleProvince/', this.ruleForm)
             .then(res => {
               if(res.data.status === "success") {
                   _this.$message('添加成功')

@@ -19,7 +19,7 @@
   <el-upload
     class="upload-demo"
     ref="upload"
-    action="http://goat.oct-month.top/api/nose/"
+    :action="`${process.env.VUE_APP_URL}/api/nose/`"
     :data="fileForm"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
@@ -74,7 +74,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
           alert("无更改权限，仅管理员可操作");
         }
         const _this = this
-        axios.delete('http://goat.oct-month.top/api/nose/', {
+        axios.delete(process.env.VUE_APP_URL + '/api/nose/', {
           data: {url: row}
         })
           .then(res => {
@@ -118,7 +118,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
     mounted() {
       //获取数据库信息
       const that = this
-      axios.get('http://goat.oct-month.top/api/nose/')
+      axios.get(process.env.VUE_APP_URL + '/api/nose/')
         .then(res => {
           if (res.data.status === "success")
           {

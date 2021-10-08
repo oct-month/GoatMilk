@@ -86,7 +86,7 @@ axios.defaults.withCredentials = true
         }
           const _this = this
         //与后端交互 
-        axios.put('http://goat.oct-month.top/api/CompanySelfInspectionRawGoatMilkSample/', this.ruleForm)
+        axios.put(process.env.VUE_APP_URL + '/api/CompanySelfInspectionRawGoatMilkSample/', this.ruleForm)
           .then(res => {
             if(res.data.status === "success") {
                 _this.$message('修改成功')

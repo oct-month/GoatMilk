@@ -98,7 +98,7 @@ export default {
         }
       //console.log(row.id);
       const _this = this
-      axios.delete('http://goat.oct-month.top/api/GoatMilkTestingSampleProvince/' + row.id)
+      axios.delete(process.env.VUE_APP_URL + '/api/GoatMilkTestingSampleProvince/' + row.id)
         .then(res => {
           if (res.data.status === "success")
             _this.$alert(row.id + '删除成功','消息', {
@@ -145,7 +145,7 @@ export default {
 
   mounted() {
     const that = this
-    axios.get('http://goat.oct-month.top/api/GoatMilkTestingSampleProvince/')
+    axios.get(process.env.VUE_APP_URL + '/api/GoatMilkTestingSampleProvince/')
       .then(res => {
         if (res.data.status === "success")
         {

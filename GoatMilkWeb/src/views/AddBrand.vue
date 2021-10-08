@@ -298,7 +298,7 @@ axios.defaults.withCredentials = true
         }
         const _this = this
         //与后端交互 
-        axios.post('http://goat.oct-month.top/api/GoatMilkTestingSampleInternational/', this.ruleForm)
+        axios.post(process.env.VUE_APP_URL + '/api/GoatMilkTestingSampleInternational/', this.ruleForm)
           .then(res => {
             if(res.data.status === "success") {
                 _this.$message('添加成功')
