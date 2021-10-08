@@ -19,7 +19,7 @@
   <el-upload
     class="upload-demo"
     ref="upload"
-    :action="`${process.env.VUE_APP_URL}/api/tongue/`"
+    :action="`${VUE_APP_URL}/api/tongue/`"
     :data="fileForm"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
@@ -41,6 +41,7 @@ import axios from 'axios'
   export default {
     data() {
       return {
+        VUE_APP_URL: process.env.VUE_APP_URL,
         fileForm: {
           desc: "",
         },

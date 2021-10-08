@@ -19,7 +19,7 @@
   <el-upload
     class="upload-demo"
     ref="upload"
-    :action="`${process.env.VUE_APP_URL}/api/nose/`"
+    :action="`${VUE_APP_URL}/api/nose/`"
     :data="fileForm"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
@@ -44,6 +44,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
   export default {
     data() {
       return {
+        VUE_APP_URL: process.env.VUE_APP_URL,
         //文本信息
         fileForm: {
           desc: ""
