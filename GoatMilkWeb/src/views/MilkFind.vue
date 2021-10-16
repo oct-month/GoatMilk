@@ -5,7 +5,11 @@
         <el-row>
           <el-col :span="8">
             <el-form-item class="select-software">
-              <el-select v-model="searchMetaData.营养指标.key" placeholder="营养指标" style="color:#ffffff">
+              <el-select
+                v-model="searchMetaData.营养指标.key"
+                placeholder="营养指标"
+                style="color: #ffffff"
+              >
                 <el-option label="蛋白质" value="蛋白质"></el-option>
                 <el-option label="脂肪" value="脂肪"></el-option>
                 <el-option label="非脂乳固体" value="非脂乳固体"></el-option>
@@ -16,51 +20,75 @@
           </el-col>
           <el-col :span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.营养指标.value" placeholder="请输入搜索关键字" class="input" />
+              <el-input
+                v-model="searchMetaData.营养指标.value"
+                placeholder="请输入搜索关键字"
+                class="input"
+              />
             </el-form-item>
           </el-col>
           <el-col :span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.营养指标.jump" placeholder="请输入波动范围" class="input" />
+              <el-input
+                v-model="searchMetaData.营养指标.jump"
+                placeholder="请输入波动范围"
+                class="input"
+              />
             </el-form-item>
           </el-col>
         </el-row>
 
         <el-row>
           <el-col span="8">
-          <el-form-item class="select-software">
-            <el-select v-model="searchMetaData.维生素类.key" placeholder="维生素类" style="width:400px">
-              <el-option label="维生素A" value="维生素A"></el-option>
-              <el-option label="维生素E" value="维生素E"></el-option>
-              <el-option label="维生素K₁" value="维生素K₁"></el-option>
-              <el-option label="维生素B₁" value="维生素B₁"></el-option>
-              <el-option label="维生素B₂" value="维生素B₂"></el-option>
-              <el-option label="维生素B₆" value="维生素B₆"></el-option>
-              <el-option label="维生素B₁₂" value="维生素B₁₂"></el-option>
-              <el-option label="维生素C" value="维生素C"></el-option>
-              <el-option label="烟酸" value="烟酸"></el-option>
-              <el-option label="泛酸" value="泛酸"></el-option>
-              <el-option label="生物素" value="生物素"></el-option>
-              <el-option label="胆碱" value="胆碱"></el-option>
-            </el-select>
-          </el-form-item>
+            <el-form-item class="select-software">
+              <el-select
+                v-model="searchMetaData.维生素类.key"
+                placeholder="维生素类"
+                style="width: 400px"
+              >
+                <el-option label="维生素A" value="维生素A"></el-option>
+                <el-option label="维生素E" value="维生素E"></el-option>
+                <el-option label="维生素K₁" value="维生素K₁"></el-option>
+                <el-option label="维生素B₁" value="维生素B₁"></el-option>
+                <el-option label="维生素B₂" value="维生素B₂"></el-option>
+                <el-option label="维生素B₆" value="维生素B₆"></el-option>
+                <el-option label="维生素B₁₂" value="维生素B₁₂"></el-option>
+                <el-option label="维生素C" value="维生素C"></el-option>
+                <el-option label="烟酸" value="烟酸"></el-option>
+                <el-option label="泛酸" value="泛酸"></el-option>
+                <el-option label="生物素" value="生物素"></el-option>
+                <el-option label="胆碱" value="胆碱"></el-option>
+              </el-select>
+            </el-form-item>
           </el-col>
           <el-col span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.维生素类.value" placeholder="请输入搜索关键字" class="input" />
+              <el-input
+                v-model="searchMetaData.维生素类.value"
+                placeholder="请输入搜索关键字"
+                class="input"
+              />
             </el-form-item>
           </el-col>
           <el-col :span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.维生素类.jump" placeholder="请输入波动范围" class="input" />
+              <el-input
+                v-model="searchMetaData.维生素类.jump"
+                placeholder="请输入波动范围"
+                class="input"
+              />
             </el-form-item>
           </el-col>
         </el-row>
-     
+
         <el-row>
           <el-col span="8">
             <el-form-item class="select-software">
-              <el-select v-model="searchMetaData.矿物质类.key" placeholder="矿物质类" style="width:400px">
+              <el-select
+                v-model="searchMetaData.矿物质类.key"
+                placeholder="矿物质类"
+                style="width: 400px"
+              >
                 <el-option label="钙" value="钙"></el-option>
                 <el-option label="铁" value="铁"></el-option>
                 <el-option label="锌" value="锌"></el-option>
@@ -79,12 +107,20 @@
 
           <el-col span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.矿物质类.value" placeholder="请输入搜索关键字" class="input" />
+              <el-input
+                v-model="searchMetaData.矿物质类.value"
+                placeholder="请输入搜索关键字"
+                class="input"
+              />
             </el-form-item>
           </el-col>
           <el-col :span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.矿物质类.jump" placeholder="请输入波动范围" class="input" />
+              <el-input
+                v-model="searchMetaData.矿物质类.jump"
+                placeholder="请输入波动范围"
+                class="input"
+              />
             </el-form-item>
           </el-col>
         </el-row>
@@ -92,7 +128,11 @@
         <el-row>
           <el-col span="8">
             <el-form-item class="select-software">
-              <el-select v-model="searchMetaData.氨基酸类.key" placeholder="氨基酸类" style="width:400px">
+              <el-select
+                v-model="searchMetaData.氨基酸类.key"
+                placeholder="氨基酸类"
+                style="width: 400px"
+              >
                 <el-option label="Asp" value="Asp"></el-option>
                 <el-option label="Thr" value="Thr"></el-option>
                 <el-option label="Ser" value="Ser"></el-option>
@@ -115,20 +155,32 @@
           </el-col>
           <el-col span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.氨基酸类.value" placeholder="请输入搜索关键字" class="input" />
+              <el-input
+                v-model="searchMetaData.氨基酸类.value"
+                placeholder="请输入搜索关键字"
+                class="input"
+              />
             </el-form-item>
           </el-col>
           <el-col :span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.氨基酸类.jump" placeholder="请输入波动范围" class="input" />
+              <el-input
+                v-model="searchMetaData.氨基酸类.jump"
+                placeholder="请输入波动范围"
+                class="input"
+              />
             </el-form-item>
           </el-col>
         </el-row>
-        
+
         <el-row>
           <el-col span="8">
             <el-form-item class="select-software">
-              <el-select v-model="searchMetaData.其他.key" placeholder="其他" style="width:400px">
+              <el-select
+                v-model="searchMetaData.其他.key"
+                placeholder="其他"
+                style="width: 400px"
+              >
                 <el-option label="水分" value="水分"></el-option>
                 <el-option label="酸度" value="酸度"></el-option>
                 <el-option label="灰分" value="灰分"></el-option>
@@ -139,96 +191,54 @@
           </el-col>
           <el-col span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.其他.value" placeholder="请输入搜索关键字" class="input" />
+              <el-input
+                v-model="searchMetaData.其他.value"
+                placeholder="请输入搜索关键字"
+                class="input"
+              />
             </el-form-item>
           </el-col>
           <el-col :span="8">
             <el-form-item class="select-software">
-              <el-input v-model="searchMetaData.其他.jump" placeholder="请输入波动范围" class="input" />
+              <el-input
+                v-model="searchMetaData.其他.jump"
+                placeholder="请输入波动范围"
+                class="input"
+              />
             </el-form-item>
           </el-col>
         </el-row>
         <el-form-item>
-            <el-button @click="doSearch">查询</el-button>
+          <el-button @click="doSearch">查询</el-button>
         </el-form-item>
       </el-form>
-
     </div>
-    <el-table
-      :data="tableData"
-      border
-      style="width: 100%">
-      <el-table-column
-      fixed
-      prop="id"
-      label="编号"
-      width="150">
+    <el-table :data="tableData" border style="width: 100%">
+      <el-table-column fixed prop="id" label="编号" width="150">
       </el-table-column>
-      <el-table-column
-        fixed
-        prop="日期"
-        label="日期"
-        width="150">
+      <el-table-column fixed prop="日期" label="日期" width="150">
       </el-table-column>
-      <el-table-column
-        prop="奶站"
-        label="奶站"
-        width="120">
+      <el-table-column prop="奶站" label="奶站" width="120"> </el-table-column>
+      <el-table-column prop="感官" label="感官" width="120"> </el-table-column>
+      <el-table-column prop="脂肪" label="脂肪(g/100g)" width="120">
       </el-table-column>
-      <el-table-column
-        prop="感官"
-        label="感官"
-        width="120">
+      <el-table-column prop="蛋白质" label="蛋白质(g/100g)" width="130">
       </el-table-column>
-      <el-table-column
-        prop="脂肪"
-        label="脂肪(g/100g)"
-        width="120">
+      <el-table-column prop="非脂乳固体" label="非脂乳固体(g/100g)" width="160">
       </el-table-column>
-      <el-table-column
-        prop="蛋白质"
-        label="蛋白质(g/100g)"
-        width="130">
+      <el-table-column prop="冰点" label="冰点(℃)" width="120">
       </el-table-column>
-      <el-table-column
-        prop="非脂乳固体"
-        label="非脂乳固体(g/100g)"
-        width="160">
+      <el-table-column prop="酸度" label="酸度(°T)" width="120">
       </el-table-column>
-      <el-table-column
-        prop="冰点"
-        label="冰点(℃)"
-        width="120">
+      <el-table-column prop="抗生素" label="抗生素" width="120">
       </el-table-column>
-      <el-table-column
-        prop="酸度"
-        label="酸度(°T)"
-        width="120">
+      <el-table-column prop="β-内酰胺酶" label="β-内酰胺酶" width="120">
       </el-table-column>
-      <el-table-column
-        prop="抗生素"
-        label="抗生素"
-        width="120">
+      <el-table-column prop="酒精试验" label="酒精试验" width="120">
       </el-table-column>
-      <el-table-column
-        prop="β-内酰胺酶"
-        label="β-内酰胺酶"
-        width="120">
+      <el-table-column prop="煮沸试验" label="煮沸试验" width="120">
       </el-table-column>
-      <el-table-column
-        prop="酒精试验"
-        label="酒精试验"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="煮沸试验"
-        label="煮沸试验"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="DBP"
-        label="DBP(mg/kg)"
-        width="120">
+      <el-table-column prop="DBP" label="DBP(mg/kg)" width="120">
       </el-table-column>
       <!-- <el-table-column
         fixed="right"
@@ -245,31 +255,38 @@
 
 <script>
 import axios from "axios";
-axios.defaults.withCredentials = true
+axios.defaults.withCredentials = true;
 
 export default {
   methods: {
     doSearch() {
-      this.tableData = []
+      this.tableData = [];
       this.brandData.forEach((samp) => {
         /* 第一种写法 */
         var flag = true;
         for (var zhibiao in this.searchMetaData) {
-          console.log(zhibiao)
-          if (!(Math.abs(samp[this.searchMetaData[zhibiao].key] - this.searchMetaData[zhibiao].value) <= this.searchMetaData[zhibiao].jump || this.searchMetaData[zhibiao].value.trim() == ''))
+          console.log(zhibiao);
+          if (
+            !(
+              Math.abs(
+                samp[this.searchMetaData[zhibiao].key] -
+                  this.searchMetaData[zhibiao].value
+              ) <= this.searchMetaData[zhibiao].jump ||
+              this.searchMetaData[zhibiao].value.trim() == ""
+            )
+          )
             flag = false;
-            console.log(this.searchMetaData[zhibiao].jump)
+          console.log(this.searchMetaData[zhibiao].jump);
         }
-        if (flag)
-          this.tableData.push(samp)
+        if (flag) this.tableData.push(samp);
         /* 第二种写法 */
         // if ((samp[this.searchMetaData.营养指标.key] === this.searchMetaData.营养指标.value || this.searchMetaData.营养指标.value.trim() == '')
         //   && (samp[this.searchMetaData.维生素类.key] === this.searchMetaData.维生素类.value || this.searchMetaData.维生素类.value.trim() == '')
         //   && (samp[this.searchMetaData.矿物质类.key] === this.searchMetaData.矿物质类.value || this.searchMetaData.矿物质类.value.trim() == '')
         //   && (samp[this.searchMetaData.氨基酸类.key] === this.searchMetaData.氨基酸类.value || this.searchMetaData.氨基酸类.value.trim() == ''))
         //   this.tableData.push(samp)
-      })
-    }
+      });
+    },
   },
   data() {
     return {
@@ -277,46 +294,49 @@ export default {
       tableData: [],
       searchMetaData: {
         营养指标: {
-          key: '',
-          value: '',
-          jump:''
+          key: "",
+          value: "",
+          jump: "",
         },
         维生素类: {
-          key: '',
-          value: '',
-          jump:''
+          key: "",
+          value: "",
+          jump: "",
         },
         矿物质类: {
-          key: '',
-          value: '',
-          jump:''
+          key: "",
+          value: "",
+          jump: "",
         },
         氨基酸类: {
-          key: '',
-          value: '',
-          jump:''
+          key: "",
+          value: "",
+          jump: "",
         },
         其他: {
-          key: '',
-          value: '',
-          jump:''
-        }
-      }
-    }
+          key: "",
+          value: "",
+          jump: "",
+        },
+      },
+    };
   },
   mounted() {
     var that = this;
-    axios.get(process.env.VUE_APP_URL + '/api/CompanySelfInspectionRawGoatMilkSample/')
-      .then(res => {
+    axios
+      .get(
+        process.env.VUE_APP_URL + "/api/CompanySelfInspectionRawGoatMilkSample/"
+      )
+      .then((res) => {
         if (res.data.status === "success") {
           that.brandData = res.data.data_list;
-          that.tableData = that.brandData
+          that.tableData = that.brandData;
         }
       })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };
 </script>
 
@@ -349,8 +369,8 @@ export default {
   position: absolute;
   left: 20px;
 }
-.select-software{
-  ::placeholder{
+.select-software {
+  ::placeholder {
     color: #000;
   }
 }

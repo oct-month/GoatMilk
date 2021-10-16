@@ -48,8 +48,7 @@ export default {
               userrole: res.data.data.role,
             });
             // that.$router.replace({ path: "/Brand" });
-          }
-          else {
+          } else {
             that.$router.replace({ path: "/login" });
             // console.log(this.$store.state.user_role) // 拿到用户的role
           }
