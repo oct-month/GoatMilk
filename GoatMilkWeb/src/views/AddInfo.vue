@@ -1,5 +1,8 @@
 <template>
 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="200px" class="demo-ruleForm">
+  <el-form-item label="公司编号" >
+    <el-input v-model="ruleForm['id']" style="width:300px"></el-input>
+  </el-form-item>
   <el-form-item label="品种" >
     <el-input v-model="ruleForm['info']" style="width:300px"></el-input>
   </el-form-item>
