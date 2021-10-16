@@ -11,11 +11,13 @@
               v-for="(item, index) in $router.options.routes"
               :key="index"
               :index="index"
+              :title="item.name"
             >
               <div v-if="item.show">
                 <template slot="title"
-                  ><i class="el-icon-message"></i>{{ item.name }}</template
+                  ><i class="el-icon-message">{{ item.name }}</i></template
                 >
+
                 <el-menu-item
                   v-for="(item2, index2) in item.children"
                   :key="index2"
