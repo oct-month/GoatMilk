@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import XLSX from 'xlsx'
 import axios from 'axios';
 axios.defaults.withCredentials = true
 
