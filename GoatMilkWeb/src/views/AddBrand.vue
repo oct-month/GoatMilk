@@ -1,7 +1,11 @@
 <template>
 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="250px" class="demo-ruleForm">
   <el-form-item label="地区" prop="info">
-    <el-input v-model="ruleForm['info']" style="width:300px" ></el-input>
+    <el-select v-model="ruleForm['info']" style="width:300px">
+      <el-option key="陕西省" label="陕西省内" value="陕西"/>
+      <el-option key="陕西省外" label="陕西省外" value=""/>
+    </el-select>
+    <!-- <el-input v-model="ruleForm['info']" style="width:300px" ></el-input> -->
   </el-form-item>
   <el-form-item label="品种" prop="品种">
     <el-input v-model="ruleForm['品种']" style="width:300px"></el-input>
