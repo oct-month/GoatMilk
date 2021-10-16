@@ -83,6 +83,8 @@ public class GoatDNAContentController extends BaseController
     @PostMapping("/")
     public BaseResponse add(@RequestBody GoatDNAContent sample, HttpServletRequest request, HttpServletResponse response)
     {
+        long new_id = dao.get_max_id() + 1;
+        sample.setId(new_id);
         try {
             GoatDNAContent data = dao.save(sample);
             return new GoatDNAContentResponse(SUCCESS_STATUS, data);

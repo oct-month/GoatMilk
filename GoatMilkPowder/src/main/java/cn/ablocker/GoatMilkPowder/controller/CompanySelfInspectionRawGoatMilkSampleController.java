@@ -93,6 +93,8 @@ public class CompanySelfInspectionRawGoatMilkSampleController extends BaseContro
     @PostMapping("/")
     public BaseResponse addSample(@RequestBody CompanySelfInspectionRawGoatMilkSample sample, HttpServletRequest request, HttpServletResponse response)
     {
+        long new_id = dao.get_max_id() + 1;
+        sample.setId(new_id);
         try {
             sample.setId(0);
             CompanySelfInspectionRawGoatMilkSample data = dao.saveAndFlush(sample);
