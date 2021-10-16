@@ -95,6 +95,8 @@ public class GoatMilkTestingSampleProvinceController extends BaseController
     public BaseResponse addSample(@RequestBody GoatMilkTestingSampleProvince sample, HttpServletRequest request, HttpServletResponse response)
     {
         try {
+            if (sample.getId().isEmpty())
+                throw new RuntimeException("[GoatMilkTestingSampleProvince, POST] ID is empty");
             GoatMilkTestingSampleProvince data = dao.save(sample);
             return new GoatMilkTestingSampleProvinceResponse(SUCCESS_STATUS, data);
         }
