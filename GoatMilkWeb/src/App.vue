@@ -47,7 +47,9 @@ export default {
               username: res.data.data.username,
               userrole: res.data.data.role,
             });
-          } else {
+            // that.$router.replace({ path: "/Brand" });
+          }
+          else {
             that.$router.replace({ path: "/login" });
             // console.log(this.$store.state.user_role) // 拿到用户的role
           }

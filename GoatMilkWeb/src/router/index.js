@@ -33,7 +33,7 @@ const routes = [
     name: "市售羊奶粉",
     component: Index,
     show: true,
-    redirect: "/login",
+    redirect: "/Brand",
     children:[
       {
         path: '/Brand',
