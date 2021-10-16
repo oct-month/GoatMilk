@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface GoatMilkTestingSampleInternationalDAO extends JpaRepository<GoatMilkTestingSampleInternational, Long>
 {
-    @Query("select MAX(id) as max_id from \"羊奶粉产品检测_国产进口_样品\"")
+    @Query(value = "select MAX(id) as max_id from \"羊奶粉产品检测_国产进口_样品\"", nativeQuery = true)
     public long get_max_id();
 }

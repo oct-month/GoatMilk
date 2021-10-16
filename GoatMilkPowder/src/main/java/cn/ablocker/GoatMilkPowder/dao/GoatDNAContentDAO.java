@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface GoatDNAContentDAO extends JpaRepository<GoatDNAContent, Long>
 {
-    @Query("select MAX(id) as max_id from \"羊奶粉dna含量\"")
+    @Query(value = "select MAX(id) as max_id from \"羊奶粉dna含量\"", nativeQuery = true)
     public long get_max_id();
 }

@@ -9,6 +9,6 @@ import cn.ablocker.GoatMilkPowder.entity.CompanySelfInspectionRawGoatMilkSample;
 @Component
 public interface CompanySelfInspectionRawGoatMilkSampleDAO extends JpaRepository<CompanySelfInspectionRawGoatMilkSample, Long>
 {
-    @Query("select MAX(id) as max_id from \"公司自检_生羊乳_样品\"")
+    @Query(value = "select MAX(id) as max_id from \"公司自检_生羊乳_样品\"", nativeQuery = true)
     public long get_max_id();
 }

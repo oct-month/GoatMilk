@@ -20,7 +20,6 @@ import lombok.Setter;
 public class GoatMilkTestingSampleInternational
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String info;

@@ -15,7 +15,6 @@ import javax.persistence.*;
 public class GoatDNAContent
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private double Abs260;
