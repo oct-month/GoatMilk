@@ -2,6 +2,7 @@
     <div>
       <center>DNA数据</center>
         <el-table
+        id="myTable"
         :data="currentTabelData"
         border
         style="width:70%">
