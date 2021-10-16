@@ -8,7 +8,7 @@
       <el-option key="陕西省" label="陕西省内" value="陕西省"/>
       <el-option key="陕西省外" label="陕西省外" value="陕西省外"/>
     </el-select>
-    <el-input v-model="ruleForm['区域']" style="width:300px" placeholder="陕西省/陕西省外"></el-input>
+    <!-- <el-input v-model="ruleForm['区域']" style="width:300px" placeholder="陕西省/陕西省外"></el-input> -->
   </el-form-item>
   <el-form-item label="感官" prop="感官">
     <el-input v-model="ruleForm['感官']" style="width:300px"></el-input>
