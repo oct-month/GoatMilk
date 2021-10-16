@@ -79,7 +79,8 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
               _this.$alert(row+'删除成功','消息',{
                 confirmButtonText: '确定',
                 callback: action => {
-                  window.location.reload()
+                  _this.imgs = _this.imgs.filter(item => item.url != row)
+                  // window.location.reload()
                   //动态刷新
                 }
               })
