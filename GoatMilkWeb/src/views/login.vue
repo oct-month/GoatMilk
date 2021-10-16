@@ -30,7 +30,7 @@
             <br />
           </div>
           <div class="keep">
-            <input @click="handlesave" id="yes" type="radio" value="0" />
+            <input @click="handlesave" id="yes" type="radio" value="0" checked/>
             <label for="yes">保持登录状态</label>
           </div>
         </div>

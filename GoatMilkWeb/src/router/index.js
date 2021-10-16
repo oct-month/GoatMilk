@@ -85,7 +85,7 @@ const routes = [
   {
     path: '/BrandUpdate',
     component: BrandUpdate,
-    show: false
+    show: true
   },
   {
     path: "/navigation",
@@ -118,7 +118,7 @@ const routes = [
   {
     path: '/InfoUpdate',
     component: InfoUpdate,
-    show: false
+    show: true
   },
   {
     path: "/navigation",
@@ -146,7 +146,7 @@ const routes = [
   {
     path: '/MilkUpdate',
     component: MilkUpdate,
-    show: false
+    show: true
   },
   // {
   //   path: "/navigation",
@@ -174,7 +174,7 @@ const routes = [
   {
     path: '/DNAUpdate',
     component: DNAUpdate,
-    show: false
+    show: true
   },
   // {
   //   path: "/navigation",
