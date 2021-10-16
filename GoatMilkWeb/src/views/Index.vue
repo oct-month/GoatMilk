@@ -7,16 +7,15 @@
       <el-aside width="200px" style="background-color: rgb(108, 141, 246)">
         <el-menu :default-openeds="['1']" :default-active="'1-1'">
           <el-menu router style="background-color: rgb(150,  201,  206)">
-            <el-submenu
+            <el-menu-item-group
               v-for="(item, index) in $router.options.routes"
               :key="index"
               :index="index"
-              :title="item.name"
+              v-if="item.show"
             >
-              <div v-if="item.show">
-                <template slot="title"
-                  ><i class="el-icon-message">{{ item.name }}</i></template
-                >
+                <template slot="title">
+                  <i class="el-icon-message">{{ item.name }}</i>
+                </template>
 
                 <el-menu-item
                   v-for="(item2, index2) in item.children"
@@ -26,8 +25,7 @@
                   >{{ item2.name }}</el-menu-item
                 >
                 <!-- 设置自动高亮 -->
-              </div>
-            </el-submenu>
+            </el-menu-item-group>
           </el-menu>
         </el-menu>
       </el-aside>
