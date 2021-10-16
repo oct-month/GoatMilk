@@ -68,7 +68,7 @@
       width="100">
       <template slot-scope="scope">
         <el-button @click="edit(scope.row)" type="text" size="small">修改</el-button>
-        <el-button @click="deleteinfo(scope.row)" type="text" size="small">删除</el-button>
+        <el-button @click="deleteinfo(scope.row, scope.$index)" type="text" size="small">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -92,7 +92,7 @@ axios.defaults.withCredentials = true
 
 export default {
   methods: {
-    deleteinfo(row){
+    deleteinfo(row, index_){
       if(this.$store.state.user_role !== 'admin'){
           alert("无更改权限，仅管理员可操作");
         }
@@ -104,7 +104,8 @@ export default {
             _this.$alert(row.id + '删除成功','消息', {
               confirmButtonText: '确定',
               callback: action => {
-                window.location.reload()
+                _this.currentTabelData.splice(index_, 1)
+                _this.tableData = _this.tableData.filter(item => item.id != row.id)
                 //动态刷新
               }
             })
