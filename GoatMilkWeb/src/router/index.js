@@ -23,7 +23,7 @@ import DNAFind from '../views/DNAFind'
 import DNAUpdate from '../views/DNAUpdate'
 import NOSE from '../views/NOSE'
 import TONGUE from '../views/TONGUE'
-import Power from '../views/Power' 
+import Power from '../views/Power'
 
 Vue.use(VueRouter)
 
@@ -34,7 +34,7 @@ const routes = [
     component: Index,
     show: true,
     redirect: "/Brand",
-    children:[
+    children: [
       {
         path: '/Brand',
         name: '陕西省内',
@@ -85,14 +85,14 @@ const routes = [
   {
     path: '/BrandUpdate',
     component: BrandUpdate,
-    show: true
+    show: false
   },
   {
     path: "/navigation",
     name: "自检羊奶粉",
     component: Index,
     show: true,
-    children:[
+    children: [
       {
         path: '/Info',
         name: '陕西省内',
@@ -118,14 +118,14 @@ const routes = [
   {
     path: '/InfoUpdate',
     component: InfoUpdate,
-    show: true
+    show: false
   },
   {
     path: "/navigation",
     name: "生鲜羊乳",
     component: Index,
     show: true,
-    children:[
+    children: [
       {
         path: '/Milk',
         name: '样品信息',
@@ -146,7 +146,7 @@ const routes = [
   {
     path: '/MilkUpdate',
     component: MilkUpdate,
-    show: true
+    show: false
   },
   // {
   //   path: "/navigation",
@@ -174,7 +174,7 @@ const routes = [
   {
     path: '/DNAUpdate',
     component: DNAUpdate,
-    show: true
+    show: false
   },
   // {
   //   path: "/navigation",
@@ -198,7 +198,7 @@ const routes = [
     name: "产地判断",
     component: Index,
     show: true,
-    children:[
+    children: [
       {
         path: '/Test',
         name: '产地判断',
@@ -210,38 +210,38 @@ const routes = [
     name: "权限管理",
     component: Index,
     show: true,
-    children:[
+    children: [
       {
         path: '/Power',
         name: '权限管理',
         component: Power
       }]
   },
-    {
-      path: "/login",
-      name: "login",
-      component:login
-      
-    }
-    ,{
-      path: "/register",
-      name: "register",
-      component: () =>
-        import("@/views/register.vue")
-    },
-    {
-      path: "/master",
-      name: "master",
-      component: () =>
-        import("@/views/master.vue")
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () =>
-        import("@/views/About.vue")
-    }
-  
+  {
+    path: "/login",
+    name: "login",
+    component: login
+
+  }
+  , {
+    path: "/register",
+    name: "register",
+    component: () =>
+      import("@/views/register.vue")
+  },
+  {
+    path: "/master",
+    name: "master",
+    component: () =>
+      import("@/views/master.vue")
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: () =>
+      import("@/views/About.vue")
+  }
+
 ]
 
 
@@ -251,35 +251,30 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to,from,next)=>
-{
+router.beforeEach((to, from, next) => {
   //登录及注册页面可以直接进入,而主页面需要分情况
-  if(to.path=='/login')
-  {
+  if (to.path == '/login') {
     next();
     console.log(localStorage.s);
   }
-  else if(to.path=='/register')
-  {
+  else if (to.path == '/register') {
     next();
   }
-  else
-  {
-    if(from.path=="/login")//从登录页面可以直接通过登录进入主页面
+  else {
+    if (from.path == "/login")//从登录页面可以直接通过登录进入主页面
     {
       next();
     }
-    else{
-    	//从/进入,如果登录状态是true，则直接next进入主页面
-	      if(localStorage.s === "true")
-		    {
-		      next();
-		      console.log(localStorage['s'])
-		    }
-	    else {//如果登录状态是false，那么跳转至登录页面,需要登录才能进入主页面
-	      next('/login');
-	      console.log("需要登录")
-	    }
+    else {
+      //从/进入,如果登录状态是true，则直接next进入主页面
+      if (localStorage.s === "true") {
+        next();
+        console.log(localStorage['s'])
+      }
+      else {//如果登录状态是false，那么跳转至登录页面,需要登录才能进入主页面
+        next('/login');
+        console.log("需要登录")
+      }
     }
   }
 })

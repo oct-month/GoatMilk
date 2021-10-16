@@ -10,7 +10,7 @@
             <el-submenu
               v-for="(item, index) in $router.options.routes"
               :key="index"
-              :index="index + ''"
+              :index="index"
             >
               <div v-if="item.show">
                 <template slot="title"
