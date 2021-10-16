@@ -37,9 +37,10 @@ public class AccountController extends BaseController
     public BaseResponse islogin(HttpServletRequest request, HttpServletResponse response)
     {
         String sessionId = request.getSession().getId();
-        boolean flag = loginUtils.isLogin(sessionId);
-        if (flag)
-            return new AccountResponse(SUCCESS_STATUS);
+        // boolean flag = loginUtils.isLogin(sessionId);
+        User user = loginUtils.getUserData(sessionId);
+        if (user != null)
+            return new AccountResponse(SUCCESS_STATUS, user);
         else
             return new AccountResponse(FAIL_STATUS);
     }

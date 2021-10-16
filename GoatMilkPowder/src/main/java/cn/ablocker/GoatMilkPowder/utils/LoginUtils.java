@@ -43,6 +43,20 @@ public class LoginUtils
             return false;
     }
 
+    public User getUserData(String sessionId)
+    {
+        String username = loginSessionDAO.get(sessionId);
+        if (!StringUtils.hasText(username))
+            return null;
+        Optional<User> dbUser = userDAO.findById(username);
+        if (dbUser != null && dbUser.isPresent())
+        {
+            User user = dbUser.get();
+            return user;
+        }
+        return null;
+    }
+
     public String getRole(String sessionId)
     {
         String username = loginSessionDAO.get(sessionId);
