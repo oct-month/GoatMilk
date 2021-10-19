@@ -246,7 +246,6 @@ const routes = [
 
 import axios from "axios";
 axios.defaults.withCredentials = true;
-// import store from '../store'
 
 const router = new VueRouter({
   mode: 'hash',
@@ -255,7 +254,10 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (router.app.$store.state.user_name == '') {
+  if (to == '/login' || to == '/register') {
+    next(to)
+  }
+  else if (router.app.$store.state.user_name == '') {
     axios
       .get(process.env.VUE_APP_URL + "/api/account/islogin")
       .then((res) => {
