@@ -254,8 +254,8 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to == '/login' || to == '/register') {
-    next(to)
+  if (to.path == "/login" || to.path == "/register") {
+    next()
   }
   else if (router.app.$store.state.user_name == '') {
     axios
@@ -284,7 +284,7 @@ router.beforeEach((to, from, next) => {
         console.log(error);
       });
   }
-  next(to)
+  next()
 })
 
 
