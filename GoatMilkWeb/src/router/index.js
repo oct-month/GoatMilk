@@ -246,6 +246,7 @@ const routes = [
 
 import axios from "axios";
 axios.defaults.withCredentials = true;
+// import store from '../store'
 
 const router = new VueRouter({
   mode: 'hash',
