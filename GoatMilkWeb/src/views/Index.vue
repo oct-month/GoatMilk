@@ -13,18 +13,18 @@
               :index="index"
               v-if="item.show"
             >
-                <template slot="title">
-                  <i class="el-icon-message"></i>{{ item.name }}
-                </template>
+              <template slot="title">
+                <i class="el-icon-message"></i>{{ item.name }}
+              </template>
 
-                <el-menu-item
-                  v-for="(item2, index2) in item.children"
-                  :key="index2"
-                  :index="item2.path"
-                  :class="$route.path == item2.path ? 'is-active' : ''"
-                  >{{ item2.name }}</el-menu-item
-                >
-                <!-- 设置自动高亮 -->
+              <el-menu-item
+                v-for="(item2, index2) in item.children"
+                :key="index2"
+                :index="item2.path"
+                :class="$route.path == item2.path ? 'is-active' : ''"
+                >{{ item2.name }}</el-menu-item
+              >
+              <!-- 设置自动高亮 -->
             </el-submenu>
           </el-menu>
         </el-menu>
@@ -93,3 +93,43 @@ export default {
   /* line-height: 60px; */
 }
 </style>
+
+<script>
+import axios from "axios";
+axios.defaults.withCredentials = true;
+
+export default {
+  methods: {
+    mounted() {
+      var that = this;
+      axios
+        .get(process.env.VUE_APP_URL + "/api/account/islogin")
+        .then((res) => {
+          if (res.data.status === "success") {
+            that.$store.commit({
+              type: "login",
+              username: res.data.data.username,
+              userrole: res.data.data.role,
+            });
+            console.log(
+              "用户" +
+                res.data.data.username +
+                "已作为" +
+                res.data.data.role +
+                "登录"
+            );
+            // that.$router.replace({ path: "/Brand" });
+          } 
+          else {
+            that.$router.replace({ path: "/login" });
+            console.log("未登录");
+            // console.log(this.$store.state.user_role) // 拿到用户的role
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+};
+</script>
