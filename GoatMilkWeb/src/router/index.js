@@ -244,12 +244,49 @@ const routes = [
 
 ]
 
+import axios from "axios";
+axios.defaults.withCredentials = true;
 
 const router = new VueRouter({
   mode: 'hash',
-  base: process.env.BASE_URL,
+  base: process.env.VUE_APP_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if (router.app.$store.state.user_name == '') {
+    axios
+      .get(process.env.VUE_APP_URL + "/api/account/islogin")
+      .then((res) => {
+        if (res.data.status === "success") {
+          router.app.$store.commit({
+            type: "login",
+            username: res.data.data.username,
+            userrole: res.data.data.role,
+          });
+          console.log(
+            "用户" +
+            res.data.data.username +
+            "已作为" +
+            res.data.data.role +
+            "登录"
+          );
+        }
+        else {
+          next("/login");
+          console.log("未登录");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  next(to)
+})
+
+
+export default router
+
 
 // router.beforeEach((to, from, next) => {
 //   //登录及注册页面可以直接进入,而主页面需要分情况
@@ -279,5 +316,3 @@ const router = new VueRouter({
 //   }
 // })
 
-
-export default router
