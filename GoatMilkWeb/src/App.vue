@@ -47,9 +47,12 @@ export default {
               username: res.data.data.username,
               userrole: res.data.data.role,
             });
+            console.log('用户' + res.data.data.username + '已作为' + res.data.data.role + '登录')
             // that.$router.replace({ path: "/Brand" });
-          } else {
+          }
+          else {
             that.$router.replace({ path: "/login" });
+            console.log('未登录')
             // console.log(this.$store.state.user_role) // 拿到用户的role
           }
         })
