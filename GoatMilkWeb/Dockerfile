@@ -1,7 +1,8 @@
 FROM node:lts-alpine as builer
 
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-# RUN apk update
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+RUN apk update
+RUN apk add --no-cache build-base musl-dev python3
 
 RUN yarn config set registry https://repo.nju.edu.cn/repository/npm/
 ENV NODE_ENV=product
