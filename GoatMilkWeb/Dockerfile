@@ -16,4 +16,5 @@ RUN yarn cache clean
 FROM nginx:stable-alpine
 LABEL maintainer="sun oct-month@qq.com"
 
+COPY ./nginx/conf/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builer /GoatmilkWeb/dist/ /usr/share/nginx/html/

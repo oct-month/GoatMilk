@@ -17,8 +17,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=10101010
       - POSTGRES_DB=GoatMilk
-    ports:
-        - "5432:5432"
+    # ports:
+    #     - "5432:5432"
 
   goat-redis:
     image: redis:alpine
@@ -55,19 +55,21 @@ services:
     image: sun/goat-milk-web:latest
     container_name: goat-milk-web
     restart: on-failure
-    depends_on: 
-      - goat-img-file
-      - goat-milk-powder
-
-  goat-nginx:
-    image: nginx:stable-alpine
-    container_name: goat-nginx
-    restart: on-failure
-    volumes:
-      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - "80:80"
     depends_on:
       - goat-img-file
       - goat-milk-powder
-      - goat-milk-web
+
+  # goat-nginx:
+  #   image: nginx:stable-alpine
+  #   container_name: goat-nginx
+  #   restart: on-failure
+  #   volumes:
+  #     - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - goat-img-file
+  #     - goat-milk-powder
+  #     - goat-milk-web

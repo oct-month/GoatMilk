@@ -4,4 +4,5 @@ __pycache__/
 .vscode/
 Pipfile.lock
 
-static/
+static/*
+!static/.keep
