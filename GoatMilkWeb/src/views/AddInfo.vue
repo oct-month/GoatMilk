@@ -83,11 +83,17 @@ export default {
         alert("无更改权限，仅管理员可操作");
       }
       const _this = this;
-      axios
-        .post(
-          process.env.VUE_APP_URL + "/api/GoatMilkTestingSampleProvince/",
-          this.ruleForm
-        )
+      axios({
+        method: 'POST',
+        url: '/api/GoatMilkTestingSampleProvince',
+        baseURL: process.env.VUE_APP_URL,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: this.ruleForm,
+        withCredentials: true,
+        responseType: 'json'
+      })
         .then((res) => {
           if (res.data.status === "success") {
             _this.$message("添加成功");

@@ -84,11 +84,20 @@ export default {
     },
     login() {
       var that = this;
-      axios
-        .post(process.env.VUE_APP_URL + "/api/account/login", {
+      axios({
+        method: 'POST',
+        url: '/api/account/login',
+        baseURL: process.env.VUE_APP_URL,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
           username: that.name,
           password: that.password,
-        })
+        },
+        withCredentials: true,
+        responseType: 'json'
+      })
         .then((res) => {
           if (res.data.status === "success") {
             that.$store.commit({

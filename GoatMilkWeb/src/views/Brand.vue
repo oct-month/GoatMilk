@@ -188,12 +188,13 @@ export default {
         alert("无更改权限，仅管理员可操作");
       }
       const _this = this;
-      axios
-        .delete(
-          process.env.VUE_APP_URL +
-            "/api/GoatMilkTestingSampleInternational/" +
-            row.id
-        )
+      axios({
+        method: 'DELETE',
+        url: '/api/GoatMilkTestingSampleInternational/' + row.id,
+        baseURL: process.env.VUE_APP_URL,
+        withCredentials: true,
+        responseType: 'json'
+      })
         .then((res) => {
           if (res.data.status === "success")
             _this.$alert(row.id + "删除成功", "消息", {
@@ -253,8 +254,13 @@ export default {
   // },
   mounted() {
     const that = this;
-    axios
-      .get(process.env.VUE_APP_URL + "/api/GoatMilkTestingSampleInternational/")
+    axios({
+      method: 'GET',
+      url: '/api/GoatMilkTestingSampleInternational',
+      baseURL: process.env.VUE_APP_URL,
+      withCredentials: true,
+      responseType: 'json'
+    })
       .then((res) => {
         if (res.data.status === "success") {
           var j = 0;

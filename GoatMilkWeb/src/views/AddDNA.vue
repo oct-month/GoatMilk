@@ -58,8 +58,17 @@ export default {
       }
       const _this = this;
       //与后端交互
-      axios
-        .post(process.env.VUE_APP_URL + "/api/GoatDNAContent/", this.ruleForm)
+      axios({
+        method: 'POST',
+        url: '/api/GoatDNAContent',
+        baseURL: process.env.VUE_APP_URL,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: this.ruleForm,
+        withCredentials: true,
+        responseType: 'json'
+      })
         .then((res) => {
           if (res.data.status === "success") {
             _this.$message("添加成功");

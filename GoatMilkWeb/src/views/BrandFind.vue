@@ -441,8 +441,13 @@ export default {
   },
   mounted() {
     var that = this;
-    axios
-      .get(process.env.VUE_APP_URL + "/api/GoatMilkTestingSampleInternational/")
+    axios({
+      method: 'GET',
+      url: '/api/GoatMilkTestingSampleInternational',
+      baseURL: process.env.VUE_APP_URL,
+      withCredentials: true,
+      responseType: 'json'
+    })
       .then((res) => {
         if (res.data.status === "success") {
           that.brandData = res.data.data_list;
