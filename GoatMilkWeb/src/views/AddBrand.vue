@@ -329,7 +329,7 @@ export default {
       //与后端交互
       axios({
         method: 'POST',
-        url: '/api/GoatMilkTestingSampleInternational',
+        url: '/api/GoatMilkTestingSampleInternational/',
         baseURL: process.env.VUE_APP_URL,
         headers: {
           'Content-Type': 'application/json'

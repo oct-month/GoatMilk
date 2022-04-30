@@ -60,7 +60,7 @@ export default {
       //与后端交互
       axios({
         method: 'POST',
-        url: '/api/GoatDNAContent',
+        url: '/api/GoatDNAContent/',
         baseURL: process.env.VUE_APP_URL,
         headers: {
           'Content-Type': 'application/json'

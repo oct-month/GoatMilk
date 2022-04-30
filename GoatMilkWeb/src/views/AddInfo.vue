@@ -85,7 +85,7 @@ export default {
       const _this = this;
       axios({
         method: 'POST',
-        url: '/api/GoatMilkTestingSampleProvince',
+        url: '/api/GoatMilkTestingSampleProvince/',
         baseURL: process.env.VUE_APP_URL,
         headers: {
           'Content-Type': 'application/json'

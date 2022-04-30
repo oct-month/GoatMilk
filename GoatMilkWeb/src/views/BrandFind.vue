@@ -443,7 +443,7 @@ export default {
     var that = this;
     axios({
       method: 'GET',
-      url: '/api/GoatMilkTestingSampleInternational',
+      url: '/api/GoatMilkTestingSampleInternational/',
       baseURL: process.env.VUE_APP_URL,
       withCredentials: true,
       responseType: 'json'

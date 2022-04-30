@@ -319,7 +319,7 @@ export default {
       //与后端交互
       axios({
         method: 'PUT',
-        url: '/api/CompanySelfInspectionRawGoatMilkSample',
+        url: '/api/CompanySelfInspectionRawGoatMilkSample/',
         baseURL: process.env.VUE_APP_URL,
         headers: {
           'Content-Type': 'application/json'
