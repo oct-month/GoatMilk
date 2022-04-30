@@ -271,4 +271,5 @@ insert into "羊奶粉dna含量" ("id", "abs260", "abs280", "abs260_280", "dna_c
 insert into "羊奶粉dna含量" ("id", "abs260", "abs280", "abs260_280", "dna_content") values (39, 2.69, 1.85, 1.46, 134.65);
 
 -- user
-insert into "用户" ("username", "password", "role") values ('test', 'test', 'admin');
+insert into "用户" ("username", "password", "role") values ('lyf', 'lyf1228', 'admin');
+insert into "用户" ("username", "password", "role") values ('snnu', 'snnufoodfood', 'viewer');
