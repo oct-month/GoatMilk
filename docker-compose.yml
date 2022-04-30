@@ -8,7 +8,7 @@ networks:
 services:
   goat-postgresql:
     build: ./postgresql/
-    image: sun/goat-postgresql:latest
+    image: ablocker/goat-postgresql:latest
     container_name: goat-postgresql
     restart: on-failure
     volumes:
@@ -25,10 +25,10 @@ services:
     container_name: goat-redis
     restart: on-failure
 
-  goat-img-file:
+  goat-milk-file:
     build: ./GoatMilkFile/
-    image: sun/goat-milk-file:latest
-    container_name: goat-img-file
+    image: ablocker/goat-milk-file:latest
+    container_name: goat-milk-file
     restart: on-failure
     volumes:
       - ./GoatMilkFile/static:/GoatMilkFile/static
@@ -40,7 +40,7 @@ services:
 
   goat-milk-powder:
     build: ./GoatMilkPowder/
-    image: sun/goat-milk-powder:latest
+    image: ablocker/goat-milk-powder:latest
     container_name: goat-milk-powder
     restart: on-failure
     environment: 
@@ -52,13 +52,13 @@ services:
 
   goat-milk-web:
     build: ./GoatMilkWeb/
-    image: sun/goat-milk-web:latest
+    image: ablocker/goat-milk-web:latest
     container_name: goat-milk-web
     restart: on-failure
     ports:
       - "8080:80"
     depends_on:
-      - goat-img-file
+      - goat-milk-file
       - goat-milk-powder
 
   # goat-nginx:
@@ -70,6 +70,6 @@ services:
   #   ports:
   #     - "80:80"
   #   depends_on:
-  #     - goat-img-file
+  #     - goat-milk-file
   #     - goat-milk-powder
   #     - goat-milk-web

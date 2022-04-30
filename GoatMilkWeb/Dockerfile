@@ -14,8 +14,8 @@ RUN yarn && yarn build
 RUN yarn cache clean
 
 
-FROM nginx:stable-alpine
+FROM ablocker/nginx:1.17.8
 LABEL maintainer="sun oct-month@qq.com"
 
-COPY ./nginx/conf/nginx.conf /etc/nginx/nginx.conf
-COPY --from=builer /GoatmilkWeb/dist/ /usr/share/nginx/html/
+COPY ./nginx/conf/nginx.conf /opt/nginx/conf/nginx.conf
+COPY --from=builer /GoatmilkWeb/dist/ /opt/nginx/html/
